@@ -1,0 +1,19 @@
+ 
+ /* Paleta de colores */
+ 
+ .colorVerde{
+    background-color: #51BA49;
+ }
+ .colorBlanco{
+    color: #F2F2F2;
+ }
+ .colorNegro{
+    color: #17202A;
+ }
+ 
+
+ /* banner pagina principal */
+ .bannerPagina {
+    object-fit: cover;
+    height: 500px;
+  }
