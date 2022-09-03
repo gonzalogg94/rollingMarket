@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ecommerce de productos de productor varios" />
-    <meta name="keywords" content=" Ecommerce,market,mercado,productos,bebidas,comida" />
-    <meta name="author" content="Heredia Enzo,Gallardo Carlos Gonzalo,Perez Fernando" />
+    <meta
+      name="description"
+      content="Ecommerce de productos de productor varios"
+    />
+    <meta
+      name="keywords"
+      content=" Ecommerce,market,mercado,productos,bebidas,comida"
+    />
+    <meta
+      name="author"
+      content="Heredia Enzo,Gallardo Carlos Gonzalo,Perez Fernando"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/c45e0b44a7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <title>Rolling Market</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <header>
         <nav class="navbar navbar-expand-lg colorBGHeaderFooter">
             <div class="container-fluid col-sm-12 justify-content-center">
@@ -72,8 +81,722 @@
             </div>
         </nav>
     </header>
-    <main></main>
-        <footer class="colorBGHeaderFooter">
+    <main class="container-fluid">
+  <section class="row">
+        <section class="col-lg-2 col-md-2 fondoLateral esconder">
+          <div class="sidebar d-none d-md-grid col-md-2 col-lg-2 text-light">
+            <ul class="list-group mt-5">
+              <li class="list-group-item listSidebar">
+                <a href="#limpieza">Limpieza</a>
+              </li>
+              <li class="list-group-item listSidebar">
+                <a href="#bebidas">Bebidas</a>
+              </li>
+              <li class="list-group-item listSidebar">
+                <a href="#lacteos">Lacteos</a>
+              </li>
+              <li class="list-group-item listSidebar">
+                <a href="#electronica">Electronica</a>
+              </li>
+            </ul>
+          </div>
+      </section>
+      <section class="col-lg-10 col-md-10 col-sm-12 ms-0 ps-0">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://imagenes.elpais.com/resizer/hAha099uGI7HWlJh9iunniCJ07Q=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/2MRLAMWNLJE3TBYELF4EGKKREQ.jpg" class="d-block w-100 bannerPagina" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-dark fs-1">Los mejores precios</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://dcom-prod.imgix.net/files/wp-content/uploads/2017/01/1484240614-11-Trucos-psicolo%CC%81gicos-del-negocio-de-supermercados.jpg?w=1280&h=720&crop=focalpoint&fp-x=0.5&fp-y=0.1&fit=crop&auto=compress&q=75" class="d-block w-100 bannerPagina" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-dark fs-1">Compra con confianza</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2022/03/supermercado-2637227.jpg" class="d-block w-100 bannerPagina" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-white fs-1">Siempre encontras ofertas</h5>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <article class="text-center my-5">
+          <div class="dropdown botonSmall">
+            <a class="btn btn-success dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Articulos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#limpieza">Limpieza</a></li>
+              <li><a class="dropdown-item" href="#bebidas">Bebidas</a></li>
+              <li><a class="dropdown-item" href="#lacteos">Lacteos</a></li>
+              <li><a class="dropdown-item" href="#electronica">Electronica</a></li>
+            </ul>
+          </div>
+          <div class="container pt-5">
+            <img src="./img/logoRollingMarket.png" class="w-25"  alt="logo rolling market">
+            <h1 class="display-4">Productos recomendados</h1>
+            <hr />
+          </div>
+          
+          <article class="row ms-0 container">
+            <aside class="col-lg-3 col-md-6 col-sm-12">
+              <div class="card">
+                <img
+                src="https://almacenonline.com.ar/wp-content/uploads/2020/04/lechemilkaut.jpg"
+                class="card-img-top w-75"
+                alt="Leche milkaut"
+                />
+                <div class="card-body fondoCards">
+                  <h5 class="card-title">
+                    Leche Parcialmente Descremada Milkaut X 1lt
+                  </h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laboriosam dicta eos at repellendus a quo.
+                  </p>
+                  <h5>$180,90</h5>
+                  <span class="badge text-bg-warning">10 productos disponibles</span>
+                  <div class="row mt-4">
+                    <div class="col-6">
+                      <button class="btn colorVerde">Comprar</button>
+                    </div>
+                    <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Gaseosa Coca-cola Sin Azúcares 2,25 Lt
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$250</h5>
+                <span class="badge text-bg-warning">15 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="http://casapan.com/wordpress/wp-content/uploads/2014/11/productos-panaderia3-1.jpg"
+              class="card-img-top h-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Pan De Hamburguesas casapan 4un. Con tacc
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$228</h5>
+                <span class="badge text-bg-warning">20 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Agua Lavandina Clásica Ayudin X2 L Elimina Virus Y Bacterias
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$380</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </article>
+      </article>
+      <article class=" mt-5 py-4">
+        <div class="text-center">
+          <i class="fa-sharp fa-solid fa-hand-sparkles fs-1 text-success"></i>
+          <h2 id="limpieza" class="display-5">Articulos de limpieza</h2>
+        </div>
+        <article class="row ms-0 container">
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Agua Lavandina Clásica Ayudin X2 L Elimina Virus Y Bacterias
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$380</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Agua Lavandina Clásica Ayudin X2 L Elimina Virus Y Bacterias
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$380</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Agua Lavandina Clásica Ayudin X2 L Elimina Virus Y Bacterias
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$380</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Agua Lavandina Clásica Ayudin X2 L Elimina Virus Y Bacterias
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$380</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </article>
+      </article>
+      <article class="mt-5 py-4 container-fluid mx-0 px-0">
+        <div class="text-center">
+          <i class="bi bi-cup-straw fs-1 text-success"></i>
+          <h2 id="bebidas" class="display-5">Bebidas</h2>
+        </div>
+        <article class="row ms-0 container">
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Gaseosa Coca-cola Sin Azúcares 2,25 Lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+              </p>
+              <h5>$250</h5>
+              <span class="badge text-bg-warning">15 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn col-6">
+                    <i class="bi bi-cart4 text-dark fs-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Gaseosa Coca-cola Sin Azúcares 2,25 Lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+              </p>
+              <h5>$250</h5>
+              <span class="badge text-bg-warning">15 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn col-6">
+                    <i class="bi bi-cart4 text-dark fs-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Gaseosa Coca-cola Sin Azúcares 2,25 Lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+              </p>
+              <h5>$250</h5>
+              <span class="badge text-bg-warning">15 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn col-6">
+                    <i class="bi bi-cart4 text-dark fs-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Gaseosa Coca-cola Sin Azúcares 2,25 Lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+              </p>
+              <h5>$250</h5>
+              <span class="badge text-bg-warning">15 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn col-6">
+                    <i class="bi bi-cart4 text-dark fs-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </article>
+      <article class="mt-5 py-4 container-fluid mx-0 px-0">
+        <div class="text-center">
+          <i class="fa-sharp fa-solid fa-cheese fs-1 text-success"></i>
+          <h2 id="lacteos" class="display-5">Lacteos</h2>
+        </div>
+        <article class="row ms-0 container">
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://almacenonline.com.ar/wp-content/uploads/2020/04/lechemilkaut.jpg"
+              class="card-img-top w-75"
+              alt="Leche milkaut"
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                  Leche Parcialmente Descremada Milkaut X 1lt
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laboriosam dicta eos at repellendus a quo.
+                </p>
+                <h5>$180,90</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                  <button class="btn col-6">
+                    <i class="bi bi-cart4 text-dark fs-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <aside class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <img
+            src="https://almacenonline.com.ar/wp-content/uploads/2020/04/lechemilkaut.jpg"
+            class="card-img-top w-75"
+            alt="Leche milkaut"
+            />
+            <div class="card-body fondoCards">
+              <h5 class="card-title">
+                Leche Parcialmente Descremada Milkaut X 1lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam dicta eos at repellendus a quo.
+              </p>
+              <h5>$180,90</h5>
+              <span class="badge text-bg-warning">10 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                <button class="btn col-6">
+                  <i class="bi bi-cart4 text-dark fs-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+        <aside class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <img
+            src="https://almacenonline.com.ar/wp-content/uploads/2020/04/lechemilkaut.jpg"
+            class="card-img-top w-75"
+            alt="Leche milkaut"
+            />
+            <div class="card-body fondoCards">
+              <h5 class="card-title">
+                Leche Parcialmente Descremada Milkaut X 1lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam dicta eos at repellendus a quo.
+              </p>
+              <h5>$180,90</h5>
+              <span class="badge text-bg-warning">10 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                <button class="btn col-6">
+                  <i class="bi bi-cart4 text-dark fs-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+        <aside class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card">
+            <img
+            src="https://almacenonline.com.ar/wp-content/uploads/2020/04/lechemilkaut.jpg"
+            class="card-img-top w-75"
+            alt="Leche milkaut"
+            />
+            <div class="card-body fondoCards">
+              <h5 class="card-title">
+                Leche Parcialmente Descremada Milkaut X 1lt
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam dicta eos at repellendus a quo.
+              </p>
+              <h5>$180,90</h5>
+              <span class="badge text-bg-warning">10 productos disponibles</span>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <button class="btn colorVerde">Comprar</button>
+                </div>
+                <div class="col-6">
+                <button class="btn col-6">
+                  <i class="bi bi-cart4 text-dark fs-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      </article>
+      <article class=" mt-5 py-4">
+        <div class="text-center">
+          <i class="fa-sharp fa-solid fa-laptop-code fs-1 text-success"></i>
+          <h2 id="electronica" class="display-5">Electronica</h2>
+        </div>
+        <article class="row ms-0 container">
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://images.start.com.ar/90NB0TY1-M03540.jpg"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                   NOTEBOOK ASUS X515 INTEL CORE I3 4GB 256GB SSD
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$94.000</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://images.start.com.ar/90NB0TY1-M03540.jpg"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                   NOTEBOOK ASUS X515 INTEL CORE I3 4GB 256GB SSD
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$94.000</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://images.start.com.ar/90NB0TY1-M03540.jpg"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                   NOTEBOOK ASUS X515 INTEL CORE I3 4GB 256GB SSD
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$94.000</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <aside class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <img
+              src="https://images.start.com.ar/90NB0TY1-M03540.jpg"
+              class="card-img-top w-75"
+              alt="Coca cola "
+              />
+              <div class="card-body fondoCards">
+                <h5 class="card-title">
+                   NOTEBOOK ASUS X515 INTEL CORE I3 4GB 256GB SSD
+                </h5>
+                <p class="card-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae possimus quia eaque, recusandae enim.
+                </p>
+                <h5>$94.000</h5>
+                <span class="badge text-bg-warning">10 productos disponibles</span>
+                <div class="row mt-4">
+                  <div class="col-6">
+                    <button class="btn colorVerde">Comprar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn col-6">
+                      <i class="bi bi-cart4 text-dark fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </article>
+      </article>
+      <article class="row container-fluid  mt-5">
+        <asidec class="col-lg-4 col-md-6 col-sm-12  ms-2 text-success">
+          <div class="text-center">
+            <img src="https://veaargentina.vtexassets.com/arquivos/boton-cencosud-2.png?v=3" alt="">
+            <h5 class="mt-4 text-dark display-6">Encontra la tienda mas cercana a tu ubicacion</h5>
+          </div>
+        </asidec>
+        <asidec class="col-lg-4 col-md-6 col-sm-12  ms-2 text-success">
+          <div class="text-center">
+            <i class="bi bi-credit-card-2-back display-1"></i>
+            <h5 class="mt-4 text-dark display-6">Todas las tarjetas de credito</h5>
+          </div>
+        </asidec>
+        <asidec class="col-lg-3 col-md-6 col-sm-12  ms-2 text-success">
+          <div class="text-center">
+            <i class="bi bi-1-circle display-1"></i>
+            <h5 class="mt-4 text-dark display-6">Encontra la tienda mas cercana a tu ubicacion</h5>
+          </div>
+        </asidec>
+      </article>
+      </article>
+    </section>
+</main>
+      <footer class="colorBGHeaderFooter">
             <div class="row g-0">
               <div
                 class="col-12 col-sm-6 col-md-3 p-4 d-flex justify-content-center align-items-center flex-column"
@@ -217,8 +940,8 @@
               </p>
             </div>
           </footer>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/app.js"></script>
-</body>
-
-</html>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="./js/app.js"></script>
+    </body>
+    </html>
+    
