@@ -1,6 +1,9 @@
  
  /* Paleta de colores */
  
+ li{
+   list-style: none;
+  }
  .colorVerde{
     background-color: #51BA49;
  }
@@ -21,6 +24,7 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
    height: 500px;
    object-fit: cover;
   }
+  
 
 
 
@@ -31,5 +35,8 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
    .bannerPagina {
       height: 300px;
       object-fit: cover;
+    }
+    .esconder{
+      display: none;
     }
 }

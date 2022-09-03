@@ -24,51 +24,70 @@
   </head>
   <body>
     <header></header>
-    <main>
-      <section>
-        <div id="sliderPagina" class="carousel slide pt-4" data-bs-ride="true">
+    <main class="container-fluid">
+    <section class="row">
+        <section class="col-lg-2 col-md-2 fondoCards esconder">
+          <div>
+            <ul>
+            <li class="my-2">
+              <button class="btn btn-primary">Limpieza</button>
+            </li>
+            <li class="my-2">
+              <button class="btn btn-primary">bebidas</button>
+            </li>
+            <li class="my-2">
+              <button class="btn btn-primary">Lacteos</button>
+            </li>
+            <li class="my-2">
+              <button class="btn btn-primary">Electrodomesticos</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="col-lg-10 col-md-10 col-sm-12">
+        <div id="sliderPagina" class="carousel slide" data-bs-ride="true">
           <div class="carousel-indicators">
             <button
-              type="button"
-              data-bs-target="#sliderPagina"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
+            type="button"
+            data-bs-target="#sliderPagina"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
             ></button>
             <button
-              type="button"
-              data-bs-target="#sliderPagina"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
+            type="button"
+            data-bs-target="#sliderPagina"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
             ></button>
             <button
-              type="button"
-              data-bs-target="#sliderPagina"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
+            type="button"
+            data-bs-target="#sliderPagina"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
             ></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="https://img.freepik.com/vector-premium/super-venta-banner-oferta-especial-fin-semana_180786-47.jpg?w=2000"
-                class="d-block w-100 bannerPagina"
-                alt="Banner 1"
+              src="https://img.freepik.com/vector-premium/super-venta-banner-oferta-especial-fin-semana_180786-47.jpg?w=2000"
+              class="d-block w-100 bannerPagina"
+              alt="Banner 1"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="https://previews.123rf.com/images/houbacze/houbacze1803/houbacze180300355/98087805-banner-s%C3%BAper-oferta.jpg"
-                class="d-block w-100 bannerPagina"
-                alt="Banner 2"
+              src="https://previews.123rf.com/images/houbacze/houbacze1803/houbacze180300355/98087805-banner-s%C3%BAper-oferta.jpg"
+              class="d-block w-100 bannerPagina"
+              alt="Banner 2"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="https://img.freepik.com/vector-gratis/plantilla-banner-mega-venta-ofertas_1017-31299.jpg?w=2000"
-                class="d-block w-100 bannerPagina"
-                alt="Banner 3"
+              src="https://img.freepik.com/vector-gratis/plantilla-banner-mega-venta-ofertas_1017-31299.jpg?w=2000"
+              class="d-block w-100 bannerPagina"
+              alt="Banner 3"
               />
             </div>
           </div>
@@ -77,50 +96,49 @@
             type="button"
             data-bs-target="#sliderPagina"
             data-bs-slide="prev"
-          >
+            >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#sliderPagina"
-            data-bs-slide="next"
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#sliderPagina"
+          data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-      <section class="text-center my-5 container">
-        <div>
-          <img src="./img/logoRollingMarket.png" class="w-25"  alt="logo rolling market">
-          <h1 class="display-4">Productos recomendados</h1>
-          <hr />
-        </div>
-        <article class="row">
-          <aside class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card">
-              <img
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+        <section class="text-center my-5">
+          <div>
+            <img src="./img/logoRollingMarket.png" class="w-25"  alt="logo rolling market">
+            <h1 class="display-4">Productos recomendados</h1>
+            <hr />
+          </div>
+          <article class="row">
+            <aside class="col-lg-3 col-md-6 col-sm-12">
+              <div class="card">
+                <img
                 src="https://almacenonline.com.ar/wp-content/uploads/2020/04/lechemilkaut.jpg"
                 class="card-img-top w-75"
                 alt="Leche milkaut"
-              />
-              <div class="card-body fondoCards">
-                <h5 class="card-title">
-                  Leche Parcialmente Descremada Milkaut X 1lt
-                </h5>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laboriosam dicta eos at repellendus a quo.
-                </p>
-                <h5>$180,90</h5>
-                <span class="badge text-bg-warning">10 productos disponibles</span>
-                <div class="row mt-4">
-                  <div class="col-6">
-                    <button class="btn colorVerde">Comprar</button>
-                  </div>
-                  <div class="col-6">
+                />
+                <div class="card-body fondoCards">
+                  <h5 class="card-title">
+                    Leche Parcialmente Descremada Milkaut X 1lt
+                  </h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laboriosam dicta eos at repellendus a quo.
+                  </p>
+                  <h5>$180,90</h5>
+                  <span class="badge text-bg-warning">10 productos disponibles</span>
+                  <div class="row mt-4">
+                    <div class="col-6">
+                      <button class="btn colorVerde">Comprar</button>
+                    </div>
+                    <div class="col-6">
                     <button class="btn col-6">
                       <i class="bi bi-cart4 text-dark fs-5"></i>
                     </button>
@@ -132,9 +150,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
-                class="card-img-top w-75"
-                alt="Coca cola "
+              src="https://www.kindpng.com/picc/m/5-57806_coca-cola-sin-azcar-coca-cola-hd-png.png"
+              class="card-img-top w-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -161,9 +179,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="http://casapan.com/wordpress/wp-content/uploads/2014/11/productos-panaderia3-1.jpg"
-                class="card-img-top h-75"
-                alt="Coca cola "
+              src="http://casapan.com/wordpress/wp-content/uploads/2014/11/productos-panaderia3-1.jpg"
+              class="card-img-top h-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -190,9 +208,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
-                class="card-img-top w-75"
-                alt="Coca cola "
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -227,9 +245,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
-                class="card-img-top w-75"
-                alt="Coca cola "
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -256,9 +274,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
-                class="card-img-top w-75"
-                alt="Coca cola "
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -285,9 +303,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
-                class="card-img-top w-75"
-                alt="Coca cola "
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -314,9 +332,9 @@
           <aside class="col-lg-3 col-md-6 col-sm-12">
             <div class="card">
               <img
-                src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
-                class="card-img-top w-75"
-                alt="Coca cola "
+              src="https://jumboargentina.vtexassets.com/arquivos/ids/624148/Lavandina-Ayudin-Lavanda-Triple-Pod-4l-2-858803.jpg?v=637505976676830000"
+              class="card-img-top w-75"
+              alt="Coca cola "
               />
               <div class="card-body fondoCards">
                 <h5 class="card-title">
@@ -342,9 +360,11 @@
           </aside>
         </article>
       </section>
-      </main>
-    <footer></footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="./js/app.js"></script>
-  </body>
-</html>
+    </section>
+</main>
+      <footer></footer>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="./js/app.js"></script>
+    </body>
+    </html>
+    
