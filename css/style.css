@@ -104,6 +104,9 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
  .sidebar li:last-child a:after {
    background:#51BA49;
  }
+ .botonSmall{
+  display: none;
+ }
   
 
 /* Media queries */
@@ -117,4 +120,7 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
     .esconder{
       display: none;
     }
+    .botonSmall{
+      display:block;
+     }
 }
