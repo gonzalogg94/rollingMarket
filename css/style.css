@@ -18,6 +18,18 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
 
  /* banner pagina principal */
  .bannerPagina {
-    object-fit: cover;
-    height: 500px;
+   height: 500px;
+   object-fit: cover;
   }
+
+
+
+/* Media queries */
+
+  /* Dispositivos sm */
+@media all and (max-width: 767px) {
+   .bannerPagina {
+      height: 300px;
+      object-fit: cover;
+    }
+}
