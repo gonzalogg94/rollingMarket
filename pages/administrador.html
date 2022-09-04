@@ -26,11 +26,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav mx-5">
                         <li class="nav-item active mx-2">
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logingModal">
                                 <h4>Loging</h4>
                             </a>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            <div class="modal fade" id="logingModal" tabindex="-1" aria-labelledby="logingLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -72,7 +72,304 @@
             </div>
         </nav>
     </header>
-    <main></main>
+
+
+    <main class="container my-5">
+      <h1 class="display-4 text-center">Administrador</h1>
+      <hr />
+      <section class="d-flex">
+        <button
+          class="btn btn-success btn-sm ms-3 just "
+        id="btnAñadirProducto" data-bs-toggle="modal" data-bs-target="#productosModal">Nuevo
+          <i class="bi bi-clipboard2-plus-fill"></i>
+        </button>
+        <button
+          class="btn btn-warning btn-sm ms-3 just "
+        id="btnAñadirProducto" data-bs-toggle="modal" data-bs-target="#editarModal">Editar
+          <i class="bi bi-clipboard2-plus-fill"></i>
+        </button>
+        <button
+          class="btn btn-danger btn-sm ms-3 just "
+        id="btnAñadirProducto" data-bs-toggle="modal" data-bs-target="#eliminarModal">Eliminar
+          <i class="bi bi-clipboard2-plus-fill"></i>
+        </button>
+      </section>
+      <section class="mt-5">
+        <h2 class="display-6 text-center">Productos</h2>
+        <hr />
+        <article class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Cod.</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Tipo de producto</th>
+              </tr>
+            </thead>
+            <tbody id="tablaProductos">
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+    <!-- Modal para administrador (Nuevo) -->
+    <div
+      class="modal fade"
+      id="productosModal"
+      tabindex="-1"
+      aria-labelledby="productosLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productosLabel">
+              Administrar Productos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Banana"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Características del producto."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input
+                  id="foto"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeProductos">tipoDeProductos</label>
+                <select id="tipoDeProductos" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit" >Listo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Modal para administrador (Añadir) -->
+    <div
+      class="modal fade"
+      id="editarModal"
+      tabindex="-1"
+      aria-labelledby="productosLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productosLabel">
+              Administrar Productos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Banana"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Características del producto."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input
+                  id="foto"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeProductos">tipoDeProductos</label>
+                <select id="tipoDeProductos" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit" >Listo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal para administrador (Eliminar) -->
+    <div
+      class="modal fade"
+      id="eliminarModal"
+      tabindex="-1"
+      aria-labelledby="productosLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productosLabel">
+              Administrar Productos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Banana"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Características del producto."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input
+                  id="foto"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeProductos">tipoDeProductos</label>
+                <select id="tipoDeProductos" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit" >Listo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
         <footer class="colorBGHeaderFooter">
             <div class="row g-0">
               <div
@@ -217,8 +514,8 @@
               </p>
             </div>
           </footer>
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/app.js"></script>
+          <script src="../js/bootstrap.bundle.min.js"></script>
+          <script src="../js/app.js"></script>
 </body>
 
 </html>
