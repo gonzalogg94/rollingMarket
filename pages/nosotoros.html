@@ -31,44 +31,44 @@
                             <h4>Inicio</h4>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <h4>Loging</h4>
-                        </a>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
+                    <li class="nav-item active d-none">
+                      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                          <h4>Loging</h4>
+                      </a>
+                      <!-- Modal -->
+                      <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
 
-                                    <div class="modal-body">
+                                  <div class="modal-body">
 
-                                        <div class="modal-">
-                                            <form id="loging">
-                                                <div class="mb-3">
-                                                    <label for="usuario">
-                                                        <E-Mail>E-Mail
-                                                    </label>
-                                                    <input id="usuario" type="email" class="form-control"
-                                                        placeholder="Ej: email@example.com" maxlength="60"
-                                                        minlength="3" />
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="inputPassword">Contraseña</label>
-                                                    <input type="password" class="form-control" id="inputPassword" minlength="5" maxlength="12">
-                                                </div>
-                                                <button class="btn btn-success" type="submit">Entrar</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                    </li>
+                                      <div class="modal-">
+                                          <form id="loging">
+                                              <div class="mb-3">
+                                                  <label for="usuario">
+                                                      <E-Mail>E-Mail
+                                                  </label>
+                                                  <input id="usuario" type="email" class="form-control"
+                                                      placeholder="Ej: email@example.com" maxlength="60"
+                                                      minlength="3" />
+                                              </div>
+                                              <div class="mb-3">
+                                                  <label for="inputPassword">Contraseña</label>
+                                                  <input type="password" class="form-control" id="inputPassword" minlength="3" maxlength="20">
+                                              </div>
+                                              <button class="btn btn-success" type="submit">Ingresar</button>
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                  </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./nosotoros.html">
                             <h4>Acerca de Nosotros</h4>
                         </a>
                     </li>
-                    <li class="nav-item  d-none">
+                    <li id="administradorNosotros" class="nav-item  d-none">
                         <a class="nav-link" href="pages/administrador.html">
                             <h4>Administrador</h4>
                         </a>
