@@ -12,11 +12,36 @@ import {validarEmail, validarPassword} from "./helpers.js";
 let formulario = document.getElementById("loging");
 let usuario=document.getElementById("usuario");
 let password=document.getElementById("inputPassword");
+const mail="rollingmarket@gmail.com"
+const pass="rollingMarket2022*"
 
 // agregamos los eventos.
+formulario.addEventListener("submit", validarAdm);
 usuario.addEventListener('blur', ()=>{validarEmail(usuario)});
 password.addEventListener('blur', ()=>{validarPassword(password)});
 
 
 // funciones
+
+function validarAdm(e){
+    e.preventDefault();
+    if(mail===usuario.value && pass===password.value){
+        let administrador = document.getElementById("administrador");
+        administrador.className = "nav-item";
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'El mail o la contraseña son incorrectos',
+          })
+          limpiarLogin();
+
+    }
+    
+}
+function limpiarLogin() {
+    formulario.reset();
+    usuario.className = "form-control";
+    password.className = "form-control";
+}
 
