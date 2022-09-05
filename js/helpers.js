@@ -12,7 +12,7 @@ export function validarEmail(input){
 }
 
 export function validarPassword(input){
-    let expReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+    let expReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
     if(expReg.test(input.value)){
         input.className = 'form-control is-valid';
         return true;
