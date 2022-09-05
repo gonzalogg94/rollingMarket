@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -90,11 +90,11 @@
       <article class="d-flex">
         <div>
           <button
-            class="btn btn-success btn-sm ms-3 col-lg-3 col-md-3"
+            class="btn btn-success btn-sm ms-3"
           id="btnAñadirProducto" data-bs-toggle="modal" data-bs-target="#productosModal">Nuevo
             <i class="bi bi-clipboard2-plus-fill"></i>
           </button>
-          <button
+          <!-- <button
             class="btn btn-warning btn-sm ms-3 col-lg-3 col-md-3"
           id="btnAñadirProducto" data-bs-toggle="modal" data-bs-target="#editarModal">Editar
             <i class="bi bi-clipboard2-plus-fill"></i>
@@ -103,7 +103,7 @@
             class="btn btn-danger btn-sm ms-3 col-lg-3 col-md-3"
           id="btnAñadirProducto" data-bs-toggle="modal" data-bs-target="#eliminarModal">Eliminar
             <i class="bi bi-clipboard2-plus-fill"></i>
-          </button>
+          </button> -->
         </div>
       </article>
       <article class="mt-5">
@@ -113,17 +113,37 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Cod.</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Foto</th>
-                <th scope="col">Categoría</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Stock</th>
+                <th class="text-center" scope="col">Cod.</th>
+                <th class="text-center" scope="col">Nombre</th>
+                <th class="text-center" scope="col">Descripcion</th>
+                <th class="text-center" scope="col">Foto</th>
+                <th class="text-center" scope="col">Categoría</th>
+                <th class="text-center" scope="col">Precio</th>
+                <th class="text-center" scope="col">Stock</th>
+                <th class="text-center" scope="col">Edición</th>
               </tr>
             </thead>
             <tbody id="tablaProductos">
             </tbody>
+          </table>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped justify-content-evenly">
+            <td class="text-center">codigo</td>
+            <td class="text-center">nombre</td>
+            <td class="text-center">descripcion</td>
+            <td class="text-center"><img src="#" alt="foto" > </td>
+            <td>Categoría</td>
+            <td class="text-center">precio</td>
+            <td class="text-center">stock</td>
+            <td class="text-center">
+              <button class="btn btn-warning mx-1" onclick>
+                <i class="bi bi-pencil-square" onclick=""></i>
+              </button>
+              <button class="btn btn-danger mx-1" onclick="">
+                <i class="bi bi-x-square"></i>
+              </button>
+            </td>
           </table>
         </div>
       </article>
@@ -133,220 +153,6 @@
     <div
       class="modal fade"
       id="productosModal"
-      tabindex="-1"
-      aria-labelledby="productosLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="productosLabel">
-              Administrar Productos
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form id="formulario">
-              <div class="mb-3">
-                <label for="codigo">Código</label>
-                <input
-                  id="codigo"
-                  type="text"
-                  class="form-control"
-                  placeholder="123"
-                  maxlength="5"
-                  minlength="1"
-                  disabled
-                />
-              </div>
-              <div class="mb-3">
-                <label for="nombre">Nombre</label>
-                <input
-                  id="nombre"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ej: Banana"
-                  maxlength="60"
-                  minlength="2"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="descripcion">Descripcion</label>
-                <textarea
-                  id="descripcion"
-                  rows="4"
-                  class="form-control"
-                  placeholder="Ej: Características del producto."
-                  maxlength="200"
-                  minlength="2"
-                ></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="foto">Foto</label>
-                <input
-                  id="foto"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
-                  maxlength="120"
-                  minlength="2"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="tipoDeProductos">Categoría</label>
-                <select id="tipoDeProductos" class="form-control">
-                  <option value="">Selecione una opcion</option>
-                  <option value="categoria1">...</option>
-                  <option value="categoria2">...</option>
-                  <option value="categoria3">...</option>
-                  <option value="categoria4">...</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="precio">Precio</label>
-                <input
-                  id="precio"
-                  type="number"
-                  class="form-control"
-                  placeholder="Ej: $ 99,99"
-                  maxlength="8"
-                  minlength="1"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="stock">Stock</label>
-                <input
-                  id="stock"
-                  type="number"
-                  class="form-control"
-                  placeholder="Ej: 1000"
-                  maxlength="6"
-                  minlength="1"
-                />
-              </div>
-              <button class="btn btn-primary" type="submit" >Listo</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-    <!-- Modal para administrador (Añadir) -->
-    <div
-      class="modal fade"
-      id="editarModal"
-      tabindex="-1"
-      aria-labelledby="productosLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="productosLabel">
-              Administrar Productos
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form id="formulario">
-              <div class="mb-3">
-                <label for="codigo">Código</label>
-                <input
-                  id="codigo"
-                  type="text"
-                  class="form-control"
-                  placeholder="123"
-                  maxlength="5"
-                  minlength="1"
-                  disabled
-                />
-              </div>
-              <div class="mb-3">
-                <label for="nombre">Nombre</label>
-                <input
-                  id="nombre"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ej: Banana"
-                  maxlength="60"
-                  minlength="2"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="descripcion">Descripcion</label>
-                <textarea
-                  id="descripcion"
-                  rows="4"
-                  class="form-control"
-                  placeholder="Ej: Características del producto."
-                  maxlength="200"
-                  minlength="2"
-                ></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="foto">Foto</label>
-                <input
-                  id="foto"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
-                  maxlength="120"
-                  minlength="2"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="tipoDeProductos">Categoría</label>
-                <select id="tipoDeProductos" class="form-control">
-                  <option value="">Selecione una opcion</option>
-                  <option value="categoria1">...</option>
-                  <option value="categoria2">...</option>
-                  <option value="categoria3">...</option>
-                  <option value="categoria4">...</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="precio">Precio</label>
-                <input
-                  id="precio"
-                  type="number"
-                  class="form-control"
-                  placeholder="Ej: $ 99,99"
-                  maxlength="8"
-                  minlength="1"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="stock">Stock</label>
-                <input
-                  id="stock"
-                  type="number"
-                  class="form-control"
-                  placeholder="Ej: 1000"
-                  maxlength="6"
-                  minlength="1"
-                />
-              </div>
-              <button class="btn btn-primary" type="submit" >Listo</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal para administrador (Eliminar) -->
-    <div
-      class="modal fade"
-      id="eliminarModal"
       tabindex="-1"
       aria-labelledby="productosLabel"
       aria-hidden="true"
