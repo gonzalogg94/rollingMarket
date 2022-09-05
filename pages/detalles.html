@@ -110,9 +110,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Foto</th>
-                <th scope="col">Categoría</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Stock</th>
+                <th scope="col">Tipo de producto</th>
               </tr>
             </thead>
             <tbody id="tablaProductos">
@@ -191,36 +189,14 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="tipoDeProductos">Categoría</label>
+                <label for="tipoDeProductos">tipoDeProductos</label>
                 <select id="tipoDeProductos" class="form-control">
                   <option value="">Selecione una opcion</option>
-                  <option value="categoria1">...</option>
-                  <option value="categoria2">...</option>
-                  <option value="categoria3">...</option>
-                  <option value="categoria4">...</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
                 </select>
-              </div>
-              <div class="mb-3">
-                <label for="precio">Precio</label>
-                <input
-                  id="precio"
-                  type="number"
-                  class="form-control"
-                  placeholder="Ej: $ 99,99"
-                  maxlength="8"
-                  minlength="1"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="stock">Stock</label>
-                <input
-                  id="stock"
-                  type="number"
-                  class="form-control"
-                  placeholder="Ej: 1000"
-                  maxlength="6"
-                  minlength="1"
-                />
               </div>
               <button class="btn btn-primary" type="submit" >Listo</button>
             </form>
