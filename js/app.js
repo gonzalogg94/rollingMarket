@@ -1,4 +1,4 @@
-
+import { validarCodigo,validarNombre,validarDescripcion } from "./helpers.js";
 // import {Producto} from "./classProducto.js";
 // // declaramos variables
 // let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
@@ -6,6 +6,21 @@
 // let listaLacteos = JSON.parse(localStorage.getItem("listaLacteosKey")) || [];
 // let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
 
-// variables formulario login
+// variables formulario producto
+const modalProducto = new bootstrap.Modal(document.getElementById("productosModal"));
+let codigo = document.getElementById("codigo");
+let nombre = document.getElementById("nombre");
+let descripcion = document.getElementById("descripcion");
+
+// eventos formulario producto
+codigo.addEventListener("blur", () => {
+    validarCodigo(codigo);
+  });
+nombre.addEventListener("blur", () => {
+    validarNombre(nombre);
+  });
+descripcion.addEventListener("blur", () => {
+    validarDescripcion(descripcion);
+  });
 
 
