@@ -1,5 +1,4 @@
-// validaciones para formularios. 
-
+// Funciones para validacion de formulario index
 export function validarEmail(input){
     let expReg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     if(expReg.test(input.value)){
@@ -10,7 +9,6 @@ export function validarEmail(input){
         return false;
     }
 }
-
 export function validarPassword(input){
     let expReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
     if(expReg.test(input.value)){
@@ -21,4 +19,6 @@ export function validarPassword(input){
         return false;
     }
 }
+// validaciones para formulario login 
+
 
