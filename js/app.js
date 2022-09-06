@@ -1,15 +1,13 @@
-
-import Producto from ".classProducto.js";
 import { validarEmail, validarPassword } from "./helpers.js";
-
+import {Producto} from "./classProducto.js";
 // declaramos variables
-const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
-const mail = "rollingmarket@gmail.com";
-const pass = "rollingMarket2022*";
 let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
 let listaBebidas = JSON.parse(localStorage.getItem("listaBebidasKey")) || [];
 let listaLacteos = JSON.parse(localStorage.getItem("listaLacteosKey")) || [];
 let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
+const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
+const mail = "rollingmarket@gmail.com";
+const pass = "rollingMarket2022*";
 let formulario = document.getElementById("loging");
 let usuario = document.getElementById("usuario");
 let password = document.getElementById("inputPassword");
@@ -24,7 +22,6 @@ password.addEventListener("blur", () => {
 });
 
 // funciones
-
 function validarAdm(e) {
   e.preventDefault();
   if (mail === usuario.value && pass === password.value) {
@@ -45,4 +42,5 @@ function limpiarLogin() {
   usuario.className = "form-control";
   password.className = "form-control";
 }
+
 
