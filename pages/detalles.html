@@ -78,12 +78,314 @@
         </div>
     </nav>
 </header>
-    <main class="container-fluid">
-        <section class="my-5 py-5">
-            <img class="w-100 h-100 pty-5 my-5" src="https://voidcoders.com/wp-content/uploads/2018/09/featured-404-error-image.png" alt=" error 404">
-        </section>
-       
-    </main>
+<main class="my-5">
+  <section class="container mb-4">
+      <div class="card m-2 ">
+        <div class="card-body">
+          <div class="text-center">
+            <h2 class="text-center mb-3">Nombre de Producto</h2>
+            <div class="mb-3">
+              <div class="row g-0">
+                <div class="col-md-4 mb-2">
+                  <img
+                    src="#"
+                    class="img-fluid rounded-start"
+                    alt="Foto del Producto"
+                  />
+                </div>
+                <div class="col-md-8 container">
+                  <div>
+                    <div class="card colorVerde mb-3" >
+                        <div class="card-header text-start">Detalles</div>
+                        <div class="card-body text-start ">
+                          <div class="row">
+                            <div class="col-6"><p>Código <br>...  </p>
+                              <p>Categoría <br>...</p>
+                          </div>
+                            <div class="col-6">
+                              <p>Precio <br> ...</p>
+                              <p>Stock <br>...</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card fondoLateral">
+            <div class="card-body">
+              <h5>Descripción</h5>
+              <div class=" d-flex justify-content-center m-3">
+                <div>
+                  <p>Texto descriptivo...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+          </div>
+    </section>
+</main>
+    <!-- Modal para administrador (Nuevo) -->
+    <div
+      class="modal fade"
+      id="productosModal"
+      tabindex="-1"
+      aria-labelledby="productosLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productosLabel">
+              Administrar Productos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Banana"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Características del producto."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input
+                  id="foto"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeProductos">tipoDeProductos</label>
+                <select id="tipoDeProductos" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit" >Listo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Modal para administrador (Añadir) -->
+    <div
+      class="modal fade"
+      id="editarModal"
+      tabindex="-1"
+      aria-labelledby="productosLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productosLabel">
+              Administrar Productos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Banana"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Características del producto."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input
+                  id="foto"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeProductos">tipoDeProductos</label>
+                <select id="tipoDeProductos" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit" >Listo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal para administrador (Eliminar) -->
+    <div
+      class="modal fade"
+      id="eliminarModal"
+      tabindex="-1"
+      aria-labelledby="productosLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productosLabel">
+              Administrar Productos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Banana"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Características del producto."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input
+                  id="foto"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipoDeProductos">tipoDeProductos</label>
+                <select id="tipoDeProductos" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">...</option>
+                  <option value="drama">...</option>
+                  <option value="comedia">...</option>
+                  <option value="aventura">...</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit" >Listo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <footer class="colorBGHeaderFooter">
       <div class="row g-0">
         <div
@@ -247,8 +549,8 @@
         </p>
       </div>
     </footer>
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/app.js"></script>
+          <script src="../js/bootstrap.bundle.min.js"></script>
+          <script src="../js/app.js"></script>
 </body>
 
 </html>

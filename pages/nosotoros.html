@@ -7,7 +7,7 @@
     <meta name="description" content="Ecommerce de productos de productor varios" />
     <meta name="keywords" content=" Ecommerce,market,mercado,productos,bebidas,comida" />
     <meta name="author" content="Heredia Enzo,Gallardo Carlos Gonzalo,Perez Fernando" />
-    <link rel="shortcut icon" href="./img/logoRollingMarket.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logoRollingMarket.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/c45e0b44a7.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg colorBGHeaderFooter">
         <div class="container-fluid col-sm-12 justify-content-center">
             <a class="navbar-brand" href="../index.html"><img src="../img/logoRollingMarket.png"
-                    width="100%" alt="logoRollingMarket"/></a>
+                    width="50%" alt="logoRollingMarket"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,44 +31,44 @@
                             <h4>Inicio</h4>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <h4>Loging</h4>
-                        </a>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
+                    <li class="nav-item active d-none">
+                      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                          <h4>Loging</h4>
+                      </a>
+                      <!-- Modal -->
+                      <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
 
-                                    <div class="modal-body">
+                                  <div class="modal-body">
 
-                                        <div class="modal-">
-                                            <form id="loging">
-                                                <div class="mb-3">
-                                                    <label for="usuario">
-                                                        <E-Mail>E-Mail
-                                                    </label>
-                                                    <input id="usuario" type="email" class="form-control"
-                                                        placeholder="Ej: email@example.com" maxlength="60"
-                                                        minlength="3" />
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="inputPassword">Contraseña</label>
-                                                    <input type="password" class="form-control" id="inputPassword" minlength="5" maxlength="12">
-                                                </div>
-                                                <button class="btn btn-success" type="submit">Entrar</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                    </li>
+                                      <div class="modal-">
+                                          <form id="loging">
+                                              <div class="mb-3">
+                                                  <label for="usuario">
+                                                      <E-Mail>E-Mail
+                                                  </label>
+                                                  <input id="usuario" type="email" class="form-control"
+                                                      placeholder="Ej: email@example.com" maxlength="60"
+                                                      minlength="3" />
+                                              </div>
+                                              <div class="mb-3">
+                                                  <label for="inputPassword">Contraseña</label>
+                                                  <input type="password" class="form-control" id="inputPassword" minlength="3" maxlength="20">
+                                              </div>
+                                              <button class="btn btn-success" type="submit">Ingresar</button>
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                  </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./nosotoros.html">
                             <h4>Acerca de Nosotros</h4>
                         </a>
                     </li>
-                    <li class="nav-item  d-none">
+                    <li id="administradorNosotros" class="nav-item  d-none">
                         <a class="nav-link" href="pages/administrador.html">
                             <h4>Administrador</h4>
                         </a>
@@ -126,10 +126,30 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-6order-sm-1">
                   <img
-                    src="../img/avatarEnzo.jpeg"
+                    src="../img/Enzo.avatar.png"
                     class="w-50 my-3"
                     alt="avatar Enzo"
                   />
+                </div>
+              </article>
+              <hr>
+              <article class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-6">
+                  <img
+                    src="../img/avatar fernando.jpeg"
+                    class="w-50"
+                    alt="avatar Fernando"
+                  />
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                  <h3>
+                    <i class="bi bi-chat-heart-fill"></i> Fernando Perez
+                  </h3>
+                  <p class="aboutUsJustify">
+                    Mi nombre es Fernando tengo 39 años y soy miembro de un equipo de desarrollo de videojuegos llamado "Last Minute Crew" como Game Designer y Level Designer usando motores como Unreal Engine y Unity.
+Siempre me atrajo todo lo relacionado a desarrollo y para poder seguir evolucionando decidí emprender la nueva tarea de aprender programación, desarrollo web y diseño de aplicaciones para que en un futuro esto se convierta en mi principal fuente de ingresos.
+Estoy emocionado de comenzar un nuevo viaje de aprendizaje y poder expandir mis limites.
+                  </p>
                 </div>
               </article>
     </main>
