@@ -52,7 +52,6 @@ export function validarDescripcion(input){
 export function validarImagen(input){
     let expReg = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
     if(expReg.test(input.value)){
-        console.log("desde validar imagen ")
         input.className = 'form-control is-valid';
         return true;
     }else{
@@ -61,7 +60,6 @@ export function validarImagen(input){
     }
 }
 export function validarCategoria(input){
-    console.log(input.value)
     if( input.value=="categoria1"||input.value=="categoria2"||input.value=="categoria3"||input.value=="categoria4"){
         input.className = 'form-control is-valid';
         return true;
@@ -71,5 +69,25 @@ export function validarCategoria(input){
     }
 }
 
+export function validarPrecio(input){
+    let expReg = /^\d*(\.\d{1})?\d{0,1}$/;
+    if(expReg.test(input.value)){
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
 
+export function validarStock(input){
+    let expReg = /^[0-9]+$/
+    if(expReg.test(input.value)){
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+    }
 
