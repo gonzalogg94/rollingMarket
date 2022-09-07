@@ -60,6 +60,16 @@ export function validarImagen(input){
         return false;
     }
 }
+export function validarCategoria(input){
+    console.log(input.value)
+    if( input.value=="categoria1"||input.value=="categoria2"||input.value=="categoria3"||input.value=="categoria4"){
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
 
 
 

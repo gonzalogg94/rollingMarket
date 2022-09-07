@@ -1,4 +1,4 @@
-import { validarCodigo,validarNombre,validarDescripcion, validarImagen } from "./helpers.js";
+import { validarCodigo,validarNombre,validarDescripcion, validarImagen, validarCategoria } from "./helpers.js";
 // import {Producto} from "./classProducto.js";
 // // declaramos variables
 // let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
@@ -12,6 +12,7 @@ let codigo = document.getElementById("codigo");
 let nombre = document.getElementById("nombre");
 let descripcion = document.getElementById("descripcion");
 let imagen= document.getElementById("imagenProducto");
+let categoria= document.getElementById("tipoDeProductos");
 
 
 // eventos formulario producto
@@ -27,6 +28,9 @@ descripcion.addEventListener("blur", () => {
 
 imagen.addEventListener("blur", () => {
     validarImagen(imagen);
+  });
+categoria.addEventListener("blur", () => {
+    validarCategoria(categoria);
   });
 
 
