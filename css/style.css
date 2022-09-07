@@ -118,6 +118,9 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
 .imagenFondo{
   background-image: https://voidcoders.com/wp-content/uploads/2018/09/featured-404-error-image.png;
 }
+.posicionBadge{
+  z-index: 3;
+}
   
 
 /* Media queries */
