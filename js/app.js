@@ -1,4 +1,12 @@
-import { validarCodigo,validarNombre,validarDescripcion, validarImagen, validarCategoria, validarPrecio, validarStock } from "./helpers.js";
+import {
+  validarCodigo,
+  validarNombre,
+  validarDescripcion,
+  validarImagen,
+  validarCategoria,
+  validarPrecio,
+  validarStock,
+} from "./helpers.js";
 // import {Producto} from "./classProducto.js";
 // // declaramos variables
 // let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
@@ -7,40 +15,45 @@ import { validarCodigo,validarNombre,validarDescripcion, validarImagen, validarC
 // let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
 
 // variables formulario producto
-const modalProducto = new bootstrap.Modal(document.getElementById("productosModal"));
+const modalProducto = new bootstrap.Modal(
+  document.getElementById("productosModal")
+);
+let formularioProductos = document.getElementById("formularioProductos");
 let codigo = document.getElementById("codigo");
 let nombre = document.getElementById("nombre");
 let descripcion = document.getElementById("descripcion");
-let imagen= document.getElementById("imagenProducto");
-let categoria= document.getElementById("tipoDeProductos");
-let precio= document.getElementById("precio");
-let stock= document.getElementById("stock");
-
-
-
+let imagen = document.getElementById("imagenProducto");
+let categoria = document.getElementById("tipoDeProductos");
+let precio = document.getElementById("precio");
+let stock = document.getElementById("stock");
 
 // eventos formulario producto
+
+formularioProductos.addEventListener("submit", crearProducto);
+
 codigo.addEventListener("blur", () => {
-    validarCodigo(codigo);
-  });
+  validarCodigo(codigo);
+});
 nombre.addEventListener("blur", () => {
-    validarNombre(nombre);
-  });
+  validarNombre(nombre);
+});
 descripcion.addEventListener("blur", () => {
-    validarDescripcion(descripcion);
-  });
+  validarDescripcion(descripcion);
+});
 
 imagen.addEventListener("blur", () => {
-    validarImagen(imagen);
-  });
+  validarImagen(imagen);
+});
 categoria.addEventListener("blur", () => {
-    validarCategoria(categoria);
-  });
+  validarCategoria(categoria);
+});
 precio.addEventListener("blur", () => {
-    validarPrecio(precio);
-  });
+  validarPrecio(precio);
+});
 stock.addEventListener("blur", () => {
-    validarStock(stock);
-  });
+  validarStock(stock);
+});
 
-
+function crearProducto() {
+  console.log("desde la funcion crear producto");
+}
