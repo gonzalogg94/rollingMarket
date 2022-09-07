@@ -1,46 +1,59 @@
-import { validarEmail, validarPassword } from "./helpers.js";
-import {Producto} from "./classProducto.js";
-// declaramos variables
-let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
-let listaBebidas = JSON.parse(localStorage.getItem("listaBebidasKey")) || [];
-let listaLacteos = JSON.parse(localStorage.getItem("listaLacteosKey")) || [];
-let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
-const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
-const mail = "rollingmarket@gmail.com";
-const pass = "rollingMarket2022*";
-let formulario = document.getElementById("loging");
-let usuario = document.getElementById("usuario");
-let password = document.getElementById("inputPassword");
+import {
+  validarCodigo,
+  validarNombre,
+  validarDescripcion,
+  validarImagen,
+  validarCategoria,
+  validarPrecio,
+  validarStock,
+} from "./helpers.js";
+// import {Producto} from "./classProducto.js";
+// // declaramos variables
+// let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
+// let listaBebidas = JSON.parse(localStorage.getItem("listaBebidasKey")) || [];
+// let listaLacteos = JSON.parse(localStorage.getItem("listaLacteosKey")) || [];
+// let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
 
-// agregamos los eventos.
-formulario.addEventListener("submit", validarAdm);
-usuario.addEventListener("blur", () => {
-  validarEmail(usuario);
+// variables formulario producto
+const modalProducto = new bootstrap.Modal(
+  document.getElementById("productosModal")
+);
+let formularioProductos = document.getElementById("formularioProductos");
+let codigo = document.getElementById("codigo");
+let nombre = document.getElementById("nombre");
+let descripcion = document.getElementById("descripcion");
+let imagen = document.getElementById("imagenProducto");
+let categoria = document.getElementById("tipoDeProductos");
+let precio = document.getElementById("precio");
+let stock = document.getElementById("stock");
+
+// eventos formulario producto
+
+formularioProductos.addEventListener("submit", crearProducto);
+
+codigo.addEventListener("blur", () => {
+  validarCodigo(codigo);
 });
-password.addEventListener("blur", () => {
-  validarPassword(password);
+nombre.addEventListener("blur", () => {
+  validarNombre(nombre);
+});
+descripcion.addEventListener("blur", () => {
+  validarDescripcion(descripcion);
 });
 
-// funciones
-function validarAdm(e) {
-  e.preventDefault();
-  if (mail === usuario.value && pass === password.value) {
-    let administrador = document.getElementById("administrador");
-    administrador.className = "nav-item";
-    modalLogin.hide();
-  } else {
-    Swal.fire({
-      icon: "error",
-      title: "ERROR",
-      text: "El mail o la contraseña son incorrectos",
-    });
-    limpiarLogin();
-  }
-}
-function limpiarLogin() {
-  formulario.reset();
-  usuario.className = "form-control";
-  password.className = "form-control";
-}
+imagen.addEventListener("blur", () => {
+  validarImagen(imagen);
+});
+categoria.addEventListener("blur", () => {
+  validarCategoria(categoria);
+});
+precio.addEventListener("blur", () => {
+  validarPrecio(precio);
+});
+stock.addEventListener("blur", () => {
+  validarStock(stock);
+});
 
-
+function crearProducto() {
+  console.log("desde la funcion crear producto");
+}
