@@ -31,7 +31,6 @@ export function validarCodigo(input){
         return false;
     }
 }
-
 export function validarNombre(input){
     if( input.value.trim().length >= 3 && input.value.trim().length <=30 ){
         input.className = 'form-control is-valid';
@@ -43,6 +42,17 @@ export function validarNombre(input){
 }
 export function validarDescripcion(input){
     if( input.value.trim().length >= 10 && input.value.trim().length <=200 ){
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
+export function validarImagen(input){
+    let expReg = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    if(expReg.test(input.value)){
+        console.log("desde validar imagen ")
         input.className = 'form-control is-valid';
         return true;
     }else{
