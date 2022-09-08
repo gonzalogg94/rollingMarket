@@ -20,6 +20,14 @@ export function validarPassword(input) {
     return false;
   }
 }
+
+  // *************************************   DEBUG   *****************************************
+  // if true no pide validacion
+  let debug = false
+  // *************************************   DEBUG   *****************************************
+
+
+
 // validaciones para formulario producto
 
 // validar codigo
@@ -42,6 +50,12 @@ export function validarNombre(input) {
   }
 }
 export function validarDescripcion(input) {
+    // *************************************   DEBUG   *****************************************
+    if(debug){
+      return true
+    }
+    // *************************************   DEBUG   *****************************************
+
   if (input.value.trim().length >= 10 && input.value.trim().length <= 200) {
     input.className = "form-control is-valid";
     return true;
@@ -51,6 +65,12 @@ export function validarDescripcion(input) {
   }
 }
 export function validarImagen(input) {
+    // *************************************   DEBUG   *****************************************
+    if(debug){
+      return true
+    }
+    // *************************************   DEBUG   *****************************************
+
   let expReg =
     /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   if (expReg.test(input.value)) {
