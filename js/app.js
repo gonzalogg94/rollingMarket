@@ -27,6 +27,16 @@ const btnCrearProducto = document.querySelector(`#btnAñadirProducto`);
 //Array Lista de Productos
 let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
 
+cargaInicial();
+function cargaInicial(){
+  if(listaProductos.length > 0){
+    listaProductos.map((itemProducto) => {crearFila(itemProducto)});
+  } else{
+    //mensaje que indique no hay nada para maquetar
+    window,alert("No hay nada para maquetar");
+  };
+};
+
 //Elementos del Formulario
 let formularioProductos = document.getElementById("formularioProductos");
 let codigo = document.getElementById("codigo");
@@ -47,7 +57,6 @@ function mostrarFormulario(){
 };
 
 // Programacion del boton añadir productos
-
 function crearProducto(e) {
   e.preventDefault();
 
@@ -58,10 +67,11 @@ function crearProducto(e) {
   listaProductos.push(nuevoProducto);
   console.log(listaProductos);
   guardarDatosLS();
+  crearFila(nuevoProducto);
   limpiarFormulario();
+  swal("Producto Añadido");
   modalFormProductos.hide();
-
-} 
+};
 
 function limpiarFormulario(){
   formularioProductos.reset();
@@ -79,8 +89,27 @@ function guardarDatosLS(){
   localStorage.setItem('listaProductosKey', JSON.stringify(listaProductos));
 };
 
+function crearFila(itemProducto){
+  let tablaProductos = document.querySelector('#tablaProductos');
+  tablaProductos.innerHTML += `<td class="text-center">${itemProducto.codigo}</td>
+  <td class="text-center">${itemProducto.nombre}</td>
+  <td class="text-center">${itemProducto.precio}</td>
+  <td class="text-center">${itemProducto.categoria}</td>
+  <td class="text-center">${itemProducto.imagen}</td>
+  <td class="text-center">${itemProducto.descripcion}</td>
+  <td class="text-center">${itemProducto.cantidad}</td>
+  <td class="text-center">
+    <button class="btn btn-warning mx-1" onclick>
+      <i class="bi bi-pencil-square" onclick=""></i>
+    </button>
+    <button class="btn btn-danger mx-1" onclick="">
+      <i class="bi bi-x-square"></i>
+    </button>
+  </td>`
+};
 
 
+//Validaciones
 codigo.addEventListener("blur", () => {
   validarCodigo(codigo);
 });
