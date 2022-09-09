@@ -8,20 +8,28 @@ let formulario = document.getElementById("loging");
 let usuario = document.getElementById("usuario");
 let password = document.getElementById("inputPassword");
 let loginIndex = document.getElementById("loginIndex");
+let administradorIndex=document.getElementById("administrador");
+
+
+
+// agregamos los eventos.
+formulario.addEventListener("submit", validarAdm);
+usuario.addEventListener("blur", () => {
+  validarEmail(usuario);
+});
+password.addEventListener("blur", () => {
+  validarPassword(password);
+});
 
 // validar usurio con sesion storage
+
 if (estadoSesion == true) {
-  loginIndex.className = "nav-item d-none";
-  administrador.className = "nav-item active";
-} else {
-  // agregamos los eventos.
-  formulario.addEventListener("submit", validarAdm);
-  usuario.addEventListener("blur", () => {
-    validarEmail(usuario);
-  });
-  password.addEventListener("blur", () => {
-    validarPassword(password);
-  });
+  loginIndex.className="nav-item d-none"
+  administradorIndex.className="nav-item"
+} else{
+  validarAdm();
+}
+  
 
   // funciones
   function validarAdm(e) {
@@ -41,7 +49,6 @@ if (estadoSesion == true) {
       limpiarLogin();
     }
   }
-}
 
 function limpiarLogin() {
   formulario.reset();

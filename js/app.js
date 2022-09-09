@@ -8,23 +8,22 @@ import {
   validarStock,
 } from "./helpers.js";
 
-
-// import {Producto} from "./classProducto.js";
-// // declaramos variables
-// let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
-// let listaBebidas = JSON.parse(localStorage.getItem("listaBebidasKey")) || [];
-// let listaLacteos = JSON.parse(localStorage.getItem("listaLacteosKey")) || [];
-// let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
-
-// variales relacionadas al inicio de sesion
-let estadoSesion = JSON.parse(sessionStorage.getItem("sesionKey"));
+// variales relacionadas al inicio de sesion de paginas nosotros
+const modalLoginNosotros = new bootstrap.Modal(document.getElementById("modalLoginNosotros"));
+let formLoginNosotros=document.getElementById("formLoginNosotros");
+const mail = "rollingmarket@gmail.com";
+const pass = "rollingMarket2022*";
+let estadoSesionNosotros = JSON.parse(sessionStorage.getItem("sesionKey"));
 let loginNosotros=document.getElementById("loginNosotros");
 // let administradorNosotros=document.getElementsById("administradorNosotros");
 let loginError=document.getElementById("loginError");
 let administradorError=document.getElementById("administradorError");
 let loginDetalles=document.getElementById("loginDetalles");
 let administradorDetalles=document.getElementById("administradorDetalles");
-
+let usuarioNosotros=document.getElementById("usuarioNosotros");
+let passwordNosotros=document.getElementById("passwordNosotros");
+let administradorNosotros=document.getElementById("administradorNosotros");
+let loginPaginaNosotros=document.getElementById("loginPaginaNosotros");
 // variables formulario producto
 // const modalProducto = new bootstrap.Modal(
 //   document.getElementById("productosModal")
@@ -38,9 +37,8 @@ let categoria = document.getElementById("tipoDeProductos");
 let precio = document.getElementById("precio");
 let stock = document.getElementById("stock");
 
-// eventos formulario producto
 
-if (estadoSesion == true) {
+if (estadoSesionNosotros == true) {
   loginNosotros.className = "nav-item d-none";
   administradorNosotros.className ="nav-item";
   loginError.className = "nav-item d-none";
@@ -48,43 +46,67 @@ if (estadoSesion == true) {
   loginDetalles.className = "nav-item d-none";
   administradorDetalles.className = "nav-item active";
 } else {
-  loginNosotros.className = "nav-item";
-  administradorNosotros.className = "nav-item d-none";
-  loginError.className = "nav-item";
-  administradorError.className = "nav-item d-none";
-  loginDetalles.className = "nav-item";
-  administradorDetalles.className = "nav-item d-none";
+  console.log("el usurario no esta logueado")
+}
+
+formLoginNosotros.addEventListener("submit", validarUsuarioNosotros);
+
+function validarUsuarioNosotros(e) {
+  e.preventDefault();
+  if (mail === usuarioNosotros.value && pass === passwordNosotros.value) {
+    administradorNosotros.className = "nav-item";
+    loginNosotros.className = "d-none";
+    sessionStorage.setItem("sesionKey",JSON.stringify(true));
+    console.log("usuario logueado")
+    modalLoginNosotros.hide();
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "ERROR",
+      text: "El mail o la contraseña son incorrectos",
+    });
+    limpiarLogin();
+  }
+}
+function limpiarLogin() {
+  formulario.reset();
+  usuarioNosotros.className = "form-control";
+  passwordNosotros.className = "form-control";
 }
 
 
 
 
 
-formularioProductos.addEventListener("submit", crearProducto);
 
-codigo.addEventListener("blur", () => {
-  validarCodigo(codigo);
-});
-nombre.addEventListener("blur", () => {
-  validarNombre(nombre);
-});
-descripcion.addEventListener("blur", () => {
-  validarDescripcion(descripcion);
-});
 
-imagen.addEventListener("blur", () => {
-  validarImagen(imagen);
-});
-categoria.addEventListener("blur", () => {
-  validarCategoria(categoria);
-});
-precio.addEventListener("blur", () => {
-  validarPrecio(precio);
-});
-stock.addEventListener("blur", () => {
-  validarStock(stock);
-});
 
-function crearProducto() {
-  console.log("desde la funcion crear producto");
-}
+
+
+
+// eventos formulario producto
+// codigo.addEventListener("blur", () => {
+//   validarCodigo(codigo);
+// });
+// nombre.addEventListener("blur", () => {
+//   validarNombre(nombre);
+// });
+// descripcion.addEventListener("blur", () => {
+//   validarDescripcion(descripcion);
+// });
+
+// imagen.addEventListener("blur", () => {
+//   validarImagen(imagen);
+// });
+// categoria.addEventListener("blur", () => {
+//   validarCategoria(categoria);
+// });
+// precio.addEventListener("blur", () => {
+//   validarPrecio(precio);
+// });
+// stock.addEventListener("blur", () => {
+//   validarStock(stock);
+// });
+
+
+
