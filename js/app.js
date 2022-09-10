@@ -7,17 +7,7 @@ import {
   validarPrecio,
   validarStock,
 } from "./helpers.js";
-// import {Producto} from "./classProducto.js";
-// // declaramos variables
-// let listaLimieza = JSON.parse(localStorage.getItem("listaLimpiezaKey")) || [];
-// let listaBebidas = JSON.parse(localStorage.getItem("listaBebidasKey")) || [];
-// let listaLacteos = JSON.parse(localStorage.getItem("listaLacteosKey")) || [];
-// let listaElectronica = JSON.parse(localStorage.getItem("listaElectronicaKey")) || [];
 
-// variables formulario producto
-const modalProducto = new bootstrap.Modal(
-  document.getElementById("productosModal")
-);
 let formularioProductos = document.getElementById("formularioProductos");
 let codigo = document.getElementById("codigo");
 let nombre = document.getElementById("nombre");
@@ -28,9 +18,6 @@ let precio = document.getElementById("precio");
 let stock = document.getElementById("stock");
 
 // eventos formulario producto
-
-formularioProductos.addEventListener("submit", crearProducto);
-
 codigo.addEventListener("blur", () => {
   validarCodigo(codigo);
 });
@@ -54,6 +41,5 @@ stock.addEventListener("blur", () => {
   validarStock(stock);
 });
 
-function crearProducto() {
-  console.log("desde la funcion crear producto");
-}
+
+

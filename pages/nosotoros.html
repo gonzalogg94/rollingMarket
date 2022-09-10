@@ -31,12 +31,12 @@
                             <h4>Inicio</h4>
                         </a>
                     </li>
-                    <li class="nav-item active d-none">
-                      <a class="nav-link active text-center" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    <li id="opcionLogin" class="nav-item active">
+                      <a class="nav-link active text-center" href="#" data-bs-toggle="modal" data-bs-target="#modalLoginNosotros">
                           <h4>Loging</h4>
                       </a>
                       <!-- Modal -->
-                      <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel"
+                      <div class="modal fade" id="modalLoginNosotros" tabindex="-1" aria-labelledby="modalLoginLabel"
                           aria-hidden="true">
                           <div class="modal-dialog">
                               <div class="modal-content">
@@ -44,18 +44,18 @@
                                   <div class="modal-body">
 
                                       <div class="modal-">
-                                          <form id="loging">
+                                          <form id="formLoginNosotros">
                                               <div class="mb-3">
-                                                  <label for="usuario">
+                                                  <label for="usuarioNosotros">
                                                       <E-Mail>E-Mail
                                                   </label>
-                                                  <input id="usuario" type="email" class="form-control"
+                                                  <input id="usuarioNosotros" type="email" class="form-control"
                                                       placeholder="Ej: email@example.com" maxlength="60"
                                                       minlength="3" />
                                               </div>
                                               <div class="mb-3">
-                                                  <label for="inputPassword">Contraseña</label>
-                                                  <input type="password" class="form-control" id="inputPassword" minlength="3" maxlength="20">
+                                                  <label for="passwordNosotros">Contraseña</label>
+                                                  <input type="password" class="form-control" id="passwordNosotros" minlength="3" maxlength="20">
                                               </div>
                                               <button class="btn btn-success" type="submit">Ingresar</button>
                                           </form>
@@ -68,8 +68,8 @@
                             <h4>Acerca de Nosotros</h4>
                         </a>
                     </li>
-                    <li id="administradorNosotros" class="nav-item  d-none">
-                        <a class="nav-link" href="pages/administrador.html">
+                    <li id="opcionAdministrador"  class="nav-item  d-none">
+                        <a class="nav-link" href="../pages/administrador.html">
                             <h4>Administrador</h4>
                         </a>
                     </li>
@@ -317,7 +317,8 @@ Estoy emocionado de comenzar un nuevo viaje de aprendizaje y poder expandir mis 
       </div>
     </footer>
         <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/app.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/nosotros.js" type="module"></script>
 </body>
 
 </html>
