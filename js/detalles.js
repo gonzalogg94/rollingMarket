@@ -1,29 +1,26 @@
 import { validarPassword, validarEmail } from "./helpers.js";
 
 // Declaracion de variables.
-const modalLoginError = new bootstrap.Modal(
-    document.getElementById("modalLoginError")
+const modalLoginDetalles = new bootstrap.Modal(
+    document.getElementById("modalLoginDetalles")
   );
   const mail = "rollingmarket@gmail.com";
   const pass = "rollingMarket2022*";
   let estadoSesion = JSON.parse(sessionStorage.getItem("sesionKey"));
-  let formLoginError = document.getElementById("formLoginError");
-  let usuarioError = document.getElementById("usuarioError");
-  let passwordError = document.getElementById("passwordError");
+  let formLoginDetalles = document.getElementById("formLoginDetalles");
+  let usuarioDetalles = document.getElementById("usuarioDetalles");
+  let passwordDetalles = document.getElementById("passwordDetalles");
   let ventanaLogin = document.getElementById("ventanaLogin");
   let ventanaAdministrador = document.getElementById("ventanaAdministrador");
 
-
-
-  // declaracion de eventos.
-formLoginError.addEventListener("submit", validarAdm);
-usuarioError.addEventListener("blur", () => {
-  validarEmail(usuarioError);
+//   declaracion de eventos
+formLoginDetalles.addEventListener("submit", validarAdm);
+usuarioDetalles.addEventListener("blur", () => {
+  validarEmail(usuarioDetalles);
 });
-passwordError.addEventListener("blur", () => {
-  validarPassword(passwordError);
+passwordDetalles.addEventListener("blur", () => {
+  validarPassword(passwordDetalles);
 });
-
 // Validar usuario al iniciar la pagina
 if (estadoSesion == true) {
     ventanaLogin.className = "nav-item d-none";
@@ -36,11 +33,11 @@ if (estadoSesion == true) {
 // funciones
 function validarAdm(e) {
     e.preventDefault();
-    if (mail === usuarioError.value && pass === passwordError.value) {
+    if (mail === usuarioDetalles.value && pass === passwordDetalles.value) {
       ventanaAdministrador.className = "nav-item active";
       ventanaLogin.className = "nav-item d-none";
       sessionStorage.setItem("sesionKey", JSON.stringify(true));
-      modalLoginError.hide();
+      modalLoginDetalles.hide();
     } else {
       Swal.fire({
         icon: "error",
@@ -52,8 +49,7 @@ function validarAdm(e) {
   }
 
 function limpiarLogin() {
-  formLoginError.reset();
-  usuarioError.className = "form-control";
-  passwordError.className = "form-control";
+  formLoginDetalles.reset();
+  usuarioDetalles.className = "form-control";
+  passwordDetalles.className = "form-control";
 }
-  
