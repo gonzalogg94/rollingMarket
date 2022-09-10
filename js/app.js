@@ -17,7 +17,6 @@ let categoria = document.getElementById("tipoDeProductos");
 let precio = document.getElementById("precio");
 let stock = document.getElementById("stock");
 
-
 // eventos formulario producto
 codigo.addEventListener("blur", () => {
   validarCodigo(codigo);

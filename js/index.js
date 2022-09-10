@@ -8,9 +8,7 @@ let formulario = document.getElementById("loging");
 let usuario = document.getElementById("usuario");
 let password = document.getElementById("inputPassword");
 let loginIndex = document.getElementById("loginIndex");
-let administradorIndex=document.getElementById("administrador");
-
-
+let administradorIndex = document.getElementById("administrador");
 
 // agregamos los eventos.
 formulario.addEventListener("submit", validarAdm);
@@ -24,31 +22,30 @@ password.addEventListener("blur", () => {
 // validar usurio con sesion storage
 
 if (estadoSesion == true) {
-  loginIndex.className="nav-item d-none"
-  administradorIndex.className="nav-item"
-} else{
+  loginIndex.className = "nav-item d-none";
+  administradorIndex.className = "nav-item";
+} else {
   validarAdm();
 }
-  
 
-  // funciones
-  function validarAdm(e) {
-    e.preventDefault();
-    if (mail === usuario.value && pass === password.value) {
-      let administrador = document.getElementById("administrador");
-      administrador.className = "nav-item active";
-      loginIndex.className = "nav-item d-none";
-      sessionStorage.setItem("sesionKey", JSON.stringify(true));
-      modalLogin.hide();
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "ERROR",
-        text: "El mail o la contraseña son incorrectos",
-      });
-      limpiarLogin();
-    }
+// funciones
+function validarAdm(e) {
+  e.preventDefault();
+  if (mail === usuario.value && pass === password.value) {
+    let administrador = document.getElementById("administrador");
+    administrador.className = "nav-item active";
+    loginIndex.className = "nav-item d-none";
+    sessionStorage.setItem("sesionKey", JSON.stringify(true));
+    modalLogin.hide();
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "ERROR",
+      text: "El mail o la contraseña son incorrectos",
+    });
+    limpiarLogin();
   }
+}
 
 function limpiarLogin() {
   formulario.reset();
