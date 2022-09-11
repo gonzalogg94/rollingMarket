@@ -90,27 +90,11 @@
               </tr>
             </thead>
             <tbody id="tablaProductos">
+
             </tbody>
           </table>
         </div>
         <div class="table-responsive">
-          <table class="table table-striped justify-content-evenly">
-            <td class="text-center">codigo</td>
-            <td class="text-center">nombre</td>
-            <td class="text-center">descripcion</td>
-            <td class="text-center"><img src="#" alt="foto" > </td>
-            <td>Categoría</td>
-            <td class="text-center">precio</td>
-            <td class="text-center">stock</td>
-            <td class="text-center">
-              <button class="btn btn-warning mx-1" onclick>
-                <i class="bi bi-pencil-square" onclick=""></i>
-              </button>
-              <button class="btn btn-danger mx-1" onclick="">
-                <i class="bi bi-x-square"></i>
-              </button>
-            </td>
-          </table>
         </div>
       </article>
     </section>
@@ -207,7 +191,7 @@
               <div class="mb-3">
                 <label for="stock">Stock</label>
                 <input
-                  id="stock"
+                  id="cantidad"
                   type="number"
                   class="form-control"
                   placeholder="Ej: 1000"
@@ -384,6 +368,7 @@
       </div>
     </footer>
           <script src="../js/bootstrap.bundle.min.js"></script>
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
           <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
           <script src="../js/app.js" type="module"></script>
 </body>

@@ -1,12 +1,12 @@
 // agregar clase producto con sus respectivos parametros metodos propiedades setters y getters
 export default class Producto{
-    constructor (codigo, nombre, precio, categoria, imagen, descripcion, cantidad){
+    constructor (codigo, nombre, descripcion, imagen, categoria, precio, cantidad){
         this.codigo = codigo;
         this.nombre = nombre;
-        this.precio = precio;
-        this.categoria = categoria;
-        this.imagen = imagen;
         this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.categoria = categoria;
+        this.precio = precio;
         this.cantidad = cantidad;
     }
 
