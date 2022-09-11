@@ -144,10 +144,26 @@ function guardarDatosLS() {
 
 
 window.borrarProducto=function(codigo){
-  console.log(codigo)
+  Swal.fire({
+    title: 'Eliminar Producto',
+    text: "Estas por eliminar el producto seleccionado",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#51BA49',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Eliminar',
+    cancelButtonText:'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
+  })
   // buscar en lista peliculas el codigo que quiero borrar
   let copiaListaProductos=listaProductos.filter((Producto)=>Producto.codigo != codigo);
-  console.log(copiaListaProductos);
   listaProductos=copiaListaProductos;
   // actualizar el local storage
 guardarDatosLS();
