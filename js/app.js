@@ -8,6 +8,7 @@ import {
   validarCantidad,
 } from "./helpers.js";
 import producto from "./classProducto.js";
+import Producto from "./classProducto.js";
 
 // declaracion de variables
 
@@ -62,7 +63,6 @@ listaProductos.map((Producto)=>{crearFila(Producto)});
 }
 
 function crearFila(Producto){
-  console.log(Producto)
   let tablaProductos=document.getElementById("tablaProductos");
   tablaProductos.innerHTML += `<tr>
   <th class="text-center" scope="row">${Producto.codigo}</th>
@@ -113,12 +113,17 @@ function crearProducto(e) {
     guardarDatosLS();
     limpiarFormulario();
     crearFila(nuevoProducto);
+    Swal.fire({
+      icon: 'success',
+      title: 'ok',
+      text: 'Su producto ha sido creado',
+    })
     modalFormProductos.hide();
   } else {
     Swal.fire({
       icon: "error",
       title: "ERROR",
-      text: "Usted debe llenar todos los campos",
+      text: "Usted debe completar todos los campos",
     });
   }
 }
@@ -134,4 +139,27 @@ function limpiarFormulario() {
 }
 function guardarDatosLS() {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
+}
+
+
+
+window.borrarProducto=function(codigo){
+  console.log(codigo)
+  // buscar en lista peliculas el codigo que quiero borrar
+  let copiaListaProductos=listaProductos.filter((Producto)=>Producto.codigo != codigo);
+  console.log(copiaListaProductos);
+  listaProductos=copiaListaProductos;
+  // actualizar el local storage
+guardarDatosLS();
+  // actualizar la tabla
+  actualizarTabla();
+
+}
+
+
+function actualizarTabla(){
+  let tablaProductos=document.getElementById("tablaProductos");
+  tablaProductos.innerHTML="";
+  cargaInicial();
+
 }
