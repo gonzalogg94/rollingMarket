@@ -8,7 +8,6 @@ import {
   validarCantidad,
 } from "./helpers.js";
 import producto from "./classProducto.js";
-import Producto from "./classProducto.js";
 
 // declaracion de variables
 
