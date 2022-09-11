@@ -19,7 +19,8 @@ let imagen = document.getElementById("imagenProducto");
 let categoria = document.getElementById("tipoDeProductos");
 let precio = document.getElementById("precio");
 let cantidad = document.getElementById("cantidad");
-let listaProductos =JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+let listaProductos =
+  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 let formularioProductos = document.getElementById("formularioProductos");
 const modalFormProductos = new bootstrap.Modal(
   document.getElementById("modalProductos")
@@ -51,19 +52,20 @@ cantidad.addEventListener("blur", () => {
 btnCrearProducto.addEventListener("click", mostrarFormulario);
 formularioProductos.addEventListener("submit", crearProducto);
 
-
 cargaInicial();
 
 // funciones
-function cargaInicial(){
-if(listaProductos.length>0){
-  // dibujar filas en la tabla
-listaProductos.map((Producto)=>{crearFila(Producto)});
-}
+function cargaInicial() {
+  if (listaProductos.length > 0) {
+    // dibujar filas en la tabla
+    listaProductos.map((Producto) => {
+      crearFila(Producto);
+    });
+  }
 }
 
-function crearFila(Producto){
-  let tablaProductos=document.getElementById("tablaProductos");
+function crearFila(Producto) {
+  let tablaProductos = document.getElementById("tablaProductos");
   tablaProductos.innerHTML += `<tr>
   <th class="text-center" scope="row">${Producto.codigo}</th>
   <td class="text-center">${Producto.nombre}</td>
@@ -114,10 +116,10 @@ function crearProducto(e) {
     limpiarFormulario();
     crearFila(nuevoProducto);
     Swal.fire({
-      icon: 'success',
-      title: 'ok',
-      text: 'Su producto ha sido creado',
-    })
+      icon: "success",
+      title: "ok",
+      text: "Su producto ha sido creado",
+    });
     modalFormProductos.hide();
   } else {
     Swal.fire({
@@ -141,41 +143,33 @@ function guardarDatosLS() {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
 }
 
-
-
-window.borrarProducto=function(codigo){
+window.borrarProducto = function (codigo) {
   Swal.fire({
-    title: 'Eliminar Producto',
+    title: "Eliminar Producto",
     text: "Estas por eliminar el producto seleccionado",
-    icon: 'warning',
+    icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: '#51BA49',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Eliminar',
-    cancelButtonText:'Cancelar'
+    confirmButtonColor: "#51BA49",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Eliminar",
+    cancelButtonText: "Cancelar",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
+      // buscar en lista peliculas el codigo que quiero borrar
+      let copiaListaProductos = listaProductos.filter(
+        (Producto) => Producto.codigo != codigo
+      );
+      listaProductos = copiaListaProductos;
+      // actualizar el local storage
+      guardarDatosLS();
+      // actualizar la tabla
+      actualizarTabla();
+      Swal.fire("Eliminado", "El producto se ha eliminado con exito", "success");
     }
-  })
-  // buscar en lista peliculas el codigo que quiero borrar
-  let copiaListaProductos=listaProductos.filter((Producto)=>Producto.codigo != codigo);
-  listaProductos=copiaListaProductos;
-  // actualizar el local storage
-guardarDatosLS();
-  // actualizar la tabla
-  actualizarTabla();
-
-}
-
-
-function actualizarTabla(){
-  let tablaProductos=document.getElementById("tablaProductos");
-  tablaProductos.innerHTML="";
+  });
+};
+function actualizarTabla() {
+  let tablaProductos = document.getElementById("tablaProductos");
+  tablaProductos.innerHTML = "";
   cargaInicial();
-
 }
