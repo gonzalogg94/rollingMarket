@@ -88,6 +88,7 @@ function crearFila(Producto) {
 
 function mostrarFormulario() {
   productoNuevo = true;
+  limpiarFormulario();
   modalFormProductos.show();
   codigo.value = uuidv4();
 }
@@ -222,4 +223,5 @@ function actualizarProducto() {
   // actualizar la tabla
   actualizarTabla();
   modalFormProductos.hide();
+  limpiarFormulario();
 }
