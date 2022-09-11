@@ -87,7 +87,7 @@ export function validarPrecio(input) {
   }
 }
 
-export function validarStock(input) {
+export function validarCantidad(input) {
   let expReg = /^[0-9]+$/;
   if (expReg.test(input.value)) {
     input.className = "form-control is-valid";
