@@ -173,3 +173,15 @@ function actualizarTabla() {
   tablaProductos.innerHTML = "";
   cargaInicial();
 }
+
+window.editarProducto=function (codigoBuscado){
+modalFormProductos.show();
+let productoBuscado=listaProductos.find((Producto)=>Producto.codigo===codigoBuscado);
+codigo.value=productoBuscado.codigo;
+nombre.value=productoBuscado.nombre;
+descripcion.value=productoBuscado.descripcion;
+imagen.value=productoBuscado.imagen;
+categoria.value=productoBuscado.categoria;
+precio.value=productoBuscado.precio;
+cantidad.value=productoBuscado.cantidad;
+}
