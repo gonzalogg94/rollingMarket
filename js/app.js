@@ -19,6 +19,7 @@ let imagen = document.getElementById("imagenProducto");
 let categoria = document.getElementById("tipoDeProductos");
 let precio = document.getElementById("precio");
 let cantidad = document.getElementById("cantidad");
+let productoNuevo = true;
 let listaProductos =
   JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 let formularioProductos = document.getElementById("formularioProductos");
@@ -86,6 +87,7 @@ function crearFila(Producto) {
 }
 
 function mostrarFormulario() {
+  productoNuevo = true;
   modalFormProductos.show();
   codigo.value = uuidv4();
 }
@@ -101,26 +103,11 @@ function crearProducto(e) {
     validarPrecio(precio) &&
     validarCantidad(cantidad)
   ) {
-    const nuevoProducto = new producto(
-      codigo.value,
-      nombre.value,
-      descripcion.value,
-      imagen.value,
-      categoria.value,
-      precio.value,
-      cantidad.value
-    );
-    listaProductos.push(nuevoProducto);
-    console.log(listaProductos);
-    guardarDatosLS();
-    limpiarFormulario();
-    crearFila(nuevoProducto);
-    Swal.fire({
-      icon: "success",
-      title: "ok",
-      text: "Su producto ha sido creado",
-    });
-    modalFormProductos.hide();
+    if (productoNuevo) {
+      generarProducto();
+    } else {
+      actualizarProducto();
+    }
   } else {
     Swal.fire({
       icon: "error",
@@ -128,6 +115,29 @@ function crearProducto(e) {
       text: "Usted debe completar todos los campos",
     });
   }
+}
+
+function generarProducto() {
+  const nuevoProducto = new producto(
+    codigo.value,
+    nombre.value,
+    descripcion.value,
+    imagen.value,
+    categoria.value,
+    precio.value,
+    cantidad.value
+  );
+  listaProductos.push(nuevoProducto);
+  console.log(listaProductos);
+  guardarDatosLS();
+  limpiarFormulario();
+  crearFila(nuevoProducto);
+  Swal.fire({
+    icon: "success",
+    title: "ok",
+    text: "Su producto ha sido creado",
+  });
+  modalFormProductos.hide();
 }
 
 function limpiarFormulario() {
@@ -164,7 +174,11 @@ window.borrarProducto = function (codigo) {
       guardarDatosLS();
       // actualizar la tabla
       actualizarTabla();
-      Swal.fire("Eliminado", "El producto se ha eliminado con exito", "success");
+      Swal.fire(
+        "Eliminado",
+        "El producto se ha eliminado con exito",
+        "success"
+      );
     }
   });
 };
@@ -174,14 +188,38 @@ function actualizarTabla() {
   cargaInicial();
 }
 
-window.editarProducto=function (codigoBuscado){
-modalFormProductos.show();
-let productoBuscado=listaProductos.find((Producto)=>Producto.codigo===codigoBuscado);
-codigo.value=productoBuscado.codigo;
-nombre.value=productoBuscado.nombre;
-descripcion.value=productoBuscado.descripcion;
-imagen.value=productoBuscado.imagen;
-categoria.value=productoBuscado.categoria;
-precio.value=productoBuscado.precio;
-cantidad.value=productoBuscado.cantidad;
+window.editarProducto = function (codigoBuscado) {
+  productoNuevo = false;
+  modalFormProductos.show();
+  let productoBuscado = listaProductos.find(
+    (Producto) => Producto.codigo === codigoBuscado
+  );
+  codigo.value = productoBuscado.codigo;
+  nombre.value = productoBuscado.nombre;
+  descripcion.value = productoBuscado.descripcion;
+  imagen.value = productoBuscado.imagen;
+  categoria.value = productoBuscado.categoria;
+  precio.value = productoBuscado.precio;
+  cantidad.value = productoBuscado.cantidad;
+};
+
+function actualizarProducto() {
+  // buscar laposicion de pelicula queestoy editando en el arreglo
+  let posicionProducto = listaProductos.findIndex(
+    (Producto) => Producto.codigo === codigo.value
+  );
+
+  // actualizar todo los datos el objeto
+  listaProductos[posicionProducto].nombre= nombre.value;
+  listaProductos[posicionProducto].descripcion= descripcion.value;
+  listaProductos[posicionProducto].imagen= imagen.value;
+  listaProductos[posicionProducto].categoria= categoria.value;
+  listaProductos[posicionProducto].precio= precio.value;
+  listaProductos[posicionProducto].cantidad= cantidad.value;
+  // actualizar el local storage
+  guardarDatosLS();
+
+  // actualizar la tabla
+  actualizarTabla();
+  modalFormProductos.hide();
 }
