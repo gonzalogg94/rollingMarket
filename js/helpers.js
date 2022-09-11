@@ -23,7 +23,7 @@ export function validarPassword(input) {
 
   // *************************************   DEBUG   *****************************************
   // if true no pide validacion
-  let debug = false
+  let debug = true
   // *************************************   DEBUG   *****************************************
 
 

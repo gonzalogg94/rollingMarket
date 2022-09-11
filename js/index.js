@@ -1,3 +1,4 @@
+import { Producto } from "./classProducto.js";
 import { validarEmail, validarPassword } from "./helpers.js";
 
   // *************************************   DEBUG   *****************************************
@@ -67,27 +68,58 @@ function ordenarProductos(){
   for (let i = 0; i < listaProductos.length; i++) {
     switch (listaProductos[i].categoria) {
       case "categoria1": 
-       console.log("es categoria 1")
+      crearCardProducto(listaProductos[i], `#limpieza`)
         
         break;
       case "categoria2": 
-       console.log("es categoria 2")
+      crearCardProducto(listaProductos[i], `#bebida`)
         
         break;
       case "categoria3": 
-       console.log("es categoria 3")
+      crearCardProducto(listaProductos[i], `#lacteo`)
         
         break;
       case "categoria4": 
-       console.log("es categoria 4")
+      crearCardProducto(listaProductos[i], `#electronica`)
         
         break;
-    
-      default:
-        break;
+      
     }
+  }
     
   }
-}
+
 
 ordenarProductos();
+
+
+function crearCardProducto(producto, containerId){
+  let productos = document.querySelector(containerId)
+  productos.innerHTML += `<aside class="col-lg-3 col-md-6 col-sm-12">
+  <div class="card">
+    <img src="${producto.imagen}" class="card-img-top w-75" alt="producto">
+    <div class="card-body fondoCards">
+      <h5 class="card-title">
+        ${producto.nombre}
+      </h5>
+      
+      <h5>${producto.precio}</h5>
+      <span class="badge text-bg-warning">${producto.stock} disponibles</span>
+      <div class="row mt-4">
+        <div class="col-6">
+          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/error404.html">Detalles</a></button>
+        </div>
+        <div class="col-6">
+          <button class="btn col-6">
+            <i class="bi bi-cart4 text-dark fs-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>`
+  
+}
+
+
+

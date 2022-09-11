@@ -10,6 +10,7 @@ export class Producto{
         this.stock = stock;
     }
 
+
     get mostrarCodigo(){
         return this.codigo;
     }
@@ -65,6 +66,7 @@ export class Producto{
     set modificarStock(nuevoStock){
         this.stock = nuevoStock;
     }
+
 
 
     
