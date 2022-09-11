@@ -112,6 +112,7 @@ function crearProducto(e) {
     console.log(listaProductos);
     guardarDatosLS();
     limpiarFormulario();
+    crearFila(nuevoProducto);
     modalFormProductos.hide();
   } else {
     Swal.fire({
