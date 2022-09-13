@@ -1,5 +1,78 @@
 import { validarPassword, validarEmail } from "./helpers.js";
 
+//Maquetado del detalle
+const parametroCodigo = new URLSearchParams(window.location.search);
+
+let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
+let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo === parametroCodigo.get('codigo')});
+
+console.log(productoBuscado.categoria)
+
+function tipoDeCategoria(){
+  if(productoBuscado.categoria === "categoria1"){
+   tipoCategoria = "Limpieza";
+  }else if(productoBuscado.categoria === "categoria2"){
+    tipoCategoria = "Bebidas";
+  }else if(productoBuscado.categoria === "categoria3"){
+    tipoCategoria = "Lacteos";
+  }else{
+    tipoCategoria = "Electrónica";
+  };
+  };
+  let tipoCategoria;
+  tipoDeCategoria()
+  console.log(tipoCategoria)
+
+let detalle = document.querySelector('#cardDetalles');
+detalle.innerHTML = `<div class="card-body">
+<div class="text-center">
+  <h1 class="text-center mb-3">${productoBuscado.nombre}</h1>
+  <div class="mb-3">
+    <div class="row g-0">
+      <div class="col-md-4 mb-2">
+        <img
+          src="${productoBuscado.imagen}"
+          class="img-fluid rounded-start"
+          alt="${productoBuscado.nombre}"
+        />
+      </div>
+      <div class="col-md-8 container">
+        <div>
+          <div class="card colorVerde mb-3" >
+              <div class="card-header text-start"><h4>Detalles</h4></div>
+              <div class="card-body text-start ">
+                <div class="row">
+                  <div class="col-6 fw-bold"><p>Código <br>${productoBuscado.codigo}</p>
+                    <p>Categoría <br>${tipoCategoria}</p>
+                </div>
+                  <div class="col-6 fw-bold ">
+                    <p>Precio <br>$ ${productoBuscado.precio}</p>
+                    <p>Stock <br>${productoBuscado.cantidad}</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card fondoLateral fw-bold">
+  <div class="card-body">
+    <h5>Descripción</h5>
+    <div class=" d-flex justify-content-center m-3">
+      <div>
+        <p>${productoBuscado.descripcion}</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>`
+
+ 
+
+
 // Declaracion de variables.
 const modalLoginDetalles = new bootstrap.Modal(
   document.getElementById("modalLoginDetalles")
@@ -52,3 +125,4 @@ function limpiarLogin() {
   usuarioDetalles.className = "form-control";
   passwordDetalles.className = "form-control";
 }
+

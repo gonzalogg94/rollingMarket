@@ -10,7 +10,11 @@ let password = document.getElementById("inputPassword");
 let loginIndex = document.getElementById("loginIndex");
 let administradorIndex = document.getElementById("administrador");
 
-
+//ruta de forma dinámica
+window.detalleProducto = function(codigo){
+  console.log(codigo)
+  window.location.href = window.location.origin+`/pages/detalles.html?codigo=`+codigo;
+};
 
 // agregamos los eventos.
 
@@ -65,7 +69,7 @@ if(producto.categoria==="categoria1"){
   <div class="card text-center">
     <img
     src="${producto.imagen}"
-    class="card-img-top w-75"
+    class="card-img-top w-100"
     alt="${producto.nombre}"
     />
     <div class="card-body fondoCards">
@@ -76,7 +80,7 @@ if(producto.categoria==="categoria1"){
       <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
       <div class="row mt-4">
         <div class="col-6">
-          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+          <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
           <button class="btn col-6">
@@ -93,7 +97,7 @@ if(producto.categoria==="categoria1"){
   <div class="card text-center">
     <img
     src="${producto.imagen}"
-    class="card-img-top w-75"
+    class="card-img-top w-100"
     alt="${producto.nombre}"
     />
     <div class="card-body fondoCards">
@@ -104,7 +108,7 @@ if(producto.categoria==="categoria1"){
       <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
       <div class="row mt-4">
         <div class="col-6">
-          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+          <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
           <button class="btn col-6">
@@ -121,7 +125,7 @@ if(producto.categoria==="categoria1"){
   <div class="card text-center">
     <img
     src="${producto.imagen}"
-    class="card-img-top w-75"
+    class="card-img-top w-100"
     alt="${producto.nombre}"
     />
     <div class="card-body fondoCards">
@@ -132,7 +136,7 @@ if(producto.categoria==="categoria1"){
       <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
       <div class="row mt-4">
         <div class="col-6">
-          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+          <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
           <button class="btn col-6">
@@ -149,7 +153,7 @@ if(producto.categoria==="categoria1"){
   <div class="card text-center">
     <img
     src="${producto.imagen}"
-    class="card-img-top w-75"
+    class="card-img-top w-100"
     alt="${producto.nombre}"
     />
     <div class="card-body fondoCards">
@@ -160,7 +164,7 @@ if(producto.categoria==="categoria1"){
       <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
       <div class="row mt-4">
         <div class="col-6">
-          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+          <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
           <button class="btn col-6">

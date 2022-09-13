@@ -134,7 +134,7 @@ function generarProducto() {
   crearFila(nuevoProducto);
   Swal.fire({
     icon: "success",
-    title: "ok",
+    title: "Ok",
     text: "Su producto ha sido creado",
   });
   modalFormProductos.hide();
@@ -176,7 +176,7 @@ window.borrarProducto = function (codigo) {
       actualizarTabla();
       Swal.fire(
         "Eliminado",
-        "El producto se ha eliminado con exito",
+        "El producto se ha eliminado con éxito",
         "success"
       );
     }
@@ -223,4 +223,9 @@ function actualizarProducto() {
   actualizarTabla();
   modalFormProductos.hide();
   limpiarFormulario();
+  Swal.fire(
+    "Actualizado",
+    "El producto se ha actualizado con éxito",
+    "success"
+  );
 }
