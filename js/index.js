@@ -65,7 +65,7 @@ function limpiarLogin() {
 function crearCardProducto(producto){
 if(producto.categoria==="categoria1"){
   let productos = document.getElementById("limpieza")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -93,7 +93,7 @@ if(producto.categoria==="categoria1"){
 </aside>`
 }else if(producto.categoria==="categoria2"){
   let productos = document.getElementById("bebidas")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -121,7 +121,7 @@ if(producto.categoria==="categoria1"){
 </aside>`
 }else if(producto.categoria==="categoria3"){
   let productos = document.getElementById("lacteos")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -149,7 +149,7 @@ if(producto.categoria==="categoria1"){
 </aside>`
 }else{
   let productos = document.getElementById("electronica")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"

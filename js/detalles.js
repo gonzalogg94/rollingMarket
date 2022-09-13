@@ -14,7 +14,7 @@ function tipoDeCategoria(){
   }else if(productoBuscado.categoria === "categoria2"){
     tipoCategoria = "Bebidas";
   }else if(productoBuscado.categoria === "categoria3"){
-    tipoCategoria = "Lacteos";
+    tipoCategoria = "Lácteos";
   }else{
     tipoCategoria = "Electrónica";
   };
