@@ -70,8 +70,6 @@ detalle.innerHTML = `<div class="card-body">
 </div>
   </div>`
 
- 
-
 
 // Declaracion de variables.
 const modalLoginDetalles = new bootstrap.Modal(
