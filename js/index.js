@@ -1,4 +1,5 @@
 import { validarEmail, validarPassword } from "./helpers.js";
+let listaProductos=JSON.parse(localStorage.getItem('listaProductosKey'))||[];
 const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
 const mail = "rollingmarket@gmail.com";
 const pass = "rollingMarket2022*";
@@ -8,11 +9,12 @@ let usuario = document.getElementById("usuario");
 let password = document.getElementById("inputPassword");
 let loginIndex = document.getElementById("loginIndex");
 let administradorIndex = document.getElementById("administrador");
-let listaProductos=JSON.parse(localStorage.getItem('listaProductosKey'))||[];
 
-console.log(listaProductos);
+
 
 // agregamos los eventos.
+
+listaProductos.map((producto)=>{crearCardProducto(producto)})
 formulario.addEventListener("submit", validarAdm);
 usuario.addEventListener("blur", () => {
   validarEmail(usuario);
@@ -56,40 +58,11 @@ function limpiarLogin() {
 }
 
 
-
-
-// dibujar columnas
-
-function ordenarProductos(){
-  for (let i = 0; i < listaProductos.length; i++) {
-    switch (listaProductos[i].categoria) {
-      case "categoria1": 
-      crearCardProducto(listaProductos[i], `#limpieza`)
-        break;
-      case "categoria2": 
-      crearCardProducto(listaProductos[i], `#bebidas`)
-        
-        break;
-      case "categoria3": 
-      crearCardProducto(listaProductos[i], `#lacteos`)
-        
-        break;
-      case "categoria4": 
-      crearCardProducto(listaProductos[i], `#electronica`)
-        
-        break;
-      
-    }
-  }
-    
-  }
-
-ordenarProductos();
-
-function crearCardProducto(producto, containerId){
-  let productos = document.querySelector(containerId)
+function crearCardProducto(producto){
+if(producto.categoria==="categoria1"){
+  let productos = document.getElementById("limpieza")
   productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
-  <div class="card">
+  <div class="card text-center">
     <img
     src="${producto.imagen}"
     class="card-img-top w-75"
@@ -100,7 +73,91 @@ function crearCardProducto(producto, containerId){
          ${producto.nombre}
       </h5>
       <h5>$${producto.precio}</h5>
-      <span class="badge text-bg-warning">${producto.cantidad}productos disponibles</span>
+      <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
+      <div class="row mt-4">
+        <div class="col-6">
+          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+        </div>
+        <div class="col-6">
+          <button class="btn col-6">
+            <i class="bi bi-cart4 text-dark fs-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>`
+}else if(producto.categoria==="categoria2"){
+  let productos = document.getElementById("bebidas")
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  <div class="card text-center">
+    <img
+    src="${producto.imagen}"
+    class="card-img-top w-75"
+    alt="${producto.nombre}"
+    />
+    <div class="card-body fondoCards">
+      <h5 class="card-title">
+         ${producto.nombre}
+      </h5>
+      <h5>$${producto.precio}</h5>
+      <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
+      <div class="row mt-4">
+        <div class="col-6">
+          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+        </div>
+        <div class="col-6">
+          <button class="btn col-6">
+            <i class="bi bi-cart4 text-dark fs-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>`
+}else if(producto.categoria==="categoria3"){
+  let productos = document.getElementById("lacteos")
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  <div class="card text-center">
+    <img
+    src="${producto.imagen}"
+    class="card-img-top w-75"
+    alt="${producto.nombre}"
+    />
+    <div class="card-body fondoCards">
+      <h5 class="card-title">
+         ${producto.nombre}
+      </h5>
+      <h5>$${producto.precio}</h5>
+      <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
+      <div class="row mt-4">
+        <div class="col-6">
+          <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
+        </div>
+        <div class="col-6">
+          <button class="btn col-6">
+            <i class="bi bi-cart4 text-dark fs-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>`
+}else{
+  let productos = document.getElementById("electronica")
+  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12">
+  <div class="card text-center">
+    <img
+    src="${producto.imagen}"
+    class="card-img-top w-75"
+    alt="${producto.nombre}"
+    />
+    <div class="card-body fondoCards">
+      <h5 class="card-title">
+         ${producto.nombre}
+      </h5>
+      <h5>$${producto.precio}</h5>
+      <span class="badge text-bg-warning">${producto.cantidad} productos disponibles</span>
       <div class="row mt-4">
         <div class="col-6">
           <button class="btn colorVerde"><a class="text-black text-decoration-none" href="./pages/detalles.html">Detalles</a></button>
@@ -115,3 +172,5 @@ function crearCardProducto(producto, containerId){
   </div>
 </aside>`
 }
+}
+
