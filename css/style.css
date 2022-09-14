@@ -21,7 +21,11 @@ background-image: linear-gradient(45deg, #14ed74 0%, #f7f7d6 100%);
  .fondoLateral{
    background-color: rgb(144, 235, 132);
  }
-
+ .bgTextoCarousel{
+  text-align: center;
+  background: #51BA49;
+  border-radius: 5px;
+}
  /* Index */
  .bannerPagina {
    height: 500px;

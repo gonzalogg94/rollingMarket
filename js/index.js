@@ -1,3 +1,4 @@
+import Producto from "./classProducto.js";
 import { validarEmail, validarPassword } from "./helpers.js";
 let listaProductos=JSON.parse(localStorage.getItem('listaProductosKey'))||[];
 const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
@@ -11,14 +12,27 @@ let loginIndex = document.getElementById("loginIndex");
 let administradorIndex = document.getElementById("administrador");
 
 //ruta de forma dinámica
-window.detalleProducto = function(codigo){
-  console.log(codigo)
+
+window.detalleProducto = function(codigo){  
   window.location.href = window.location.origin+`/pages/detalles.html?codigo=`+codigo;
 };
+let listaCompras = JSON.parse(localStorage.getItem('listaComprasKey')) || [];
+
+window.agregarAlCarrito = function (codigo){
+  const parametroCodigo = codigo;
+  let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
+  let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo === parametroCodigo});
+  productoBuscado['codigoBarra'] = uuidv4();
+  listaCompras.push(productoBuscado);
+  numeroDeProductos = listaCompras.length;
+  numerito();
+  localStorage.setItem("listaComprasKey", JSON.stringify(listaCompras));
+}
+let numeroDeProductos = listaCompras.length;
+
 
 // agregamos los eventos.
-
-listaProductos.map((producto)=>{crearCardProducto(producto)})
+listaProductos.map((producto)=>{crearCardProducto(producto)});
 formulario.addEventListener("submit", validarAdm);
 usuario.addEventListener("blur", () => {
   validarEmail(usuario);
@@ -83,7 +97,7 @@ if(producto.categoria==="categoria1"){
           <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
-          <button class="btn col-6">
+          <button class="btn col-6" onclick="agregarAlCarrito('${producto.codigo}')">
             <i class="bi bi-cart4 text-dark fs-5"></i>
           </button>
         </div>
@@ -111,7 +125,7 @@ if(producto.categoria==="categoria1"){
           <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
-          <button class="btn col-6">
+          <button class="btn col-6" onclick="agregarAlCarrito('${producto.codigo}')">
             <i class="bi bi-cart4 text-dark fs-5"></i>
           </button>
         </div>
@@ -139,7 +153,7 @@ if(producto.categoria==="categoria1"){
           <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
-          <button class="btn col-6">
+          <button class="btn col-6" onclick="agregarAlCarrito('${producto.codigo}')">
             <i class="bi bi-cart4 text-dark fs-5"></i>
           </button>
         </div>
@@ -167,7 +181,7 @@ if(producto.categoria==="categoria1"){
           <button class="btn colorVerde" onclick="detalleProducto('${producto.codigo}')"><a class="text-black text-decoration-none">Detalles</a></button>
         </div>
         <div class="col-6">
-          <button class="btn col-6">
+          <button class="btn col-6" onclick="agregarAlCarrito('${producto.codigo}')">
             <i class="bi bi-cart4 text-dark fs-5"></i>
           </button>
         </div>
@@ -175,6 +189,23 @@ if(producto.categoria==="categoria1"){
     </div>
   </div>
 </aside>`
+};
+numerito();
 }
-}
+
+function numerito(){
+let numero = document.getElementById("carritoCompras")
+    numero.innerHTML=`<a href="../pages/listaCompras.html"><i class="bi bi-cart4 text-dark fs-5"></i></a>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      ${numeroDeProductos}
+      <span class="visually-hidden">unread messages</span>
+    </span>`
+};
+
+
+
+
+
+
+
 

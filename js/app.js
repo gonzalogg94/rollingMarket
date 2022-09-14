@@ -151,7 +151,7 @@ function limpiarFormulario() {
 }
 function guardarDatosLS() {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
-}
+};
 
 window.borrarProducto = function (codigo) {
   Swal.fire({
@@ -186,7 +186,7 @@ function actualizarTabla() {
   let tablaProductos = document.getElementById("tablaProductos");
   tablaProductos.innerHTML = "";
   cargaInicial();
-}
+};
 
 window.editarProducto = function (codigoBuscado) {
   productoNuevo = false;
