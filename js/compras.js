@@ -17,12 +17,13 @@ function crearTablaCompras(producto){
       <img class="w-100" src="${producto.imagen}" alt="${producto.nombre}">
   </div>
     <div class="col-8 text-center">
-      <h5>${producto.descripcion}</h5>
-      <h4>Precio</h4>
+      <h5 class="mb-5">${producto.descripcion}</h5>
+      <h3>Precio</h3>
       <h5>$${producto.precio}</h5>
       <hr>
-      <p>${producto.codigo}</p>
-      <button class="btn btn-danger" onclick="eliminarProducto('${producto.codigo}')">Eliminar</button>
+      <h4>Código de Barra</h4>
+      <p>${producto.codigoBarra}</p>
+      <button class="btn btn-danger" onclick="eliminarProducto('${producto.codigoBarra}')">Eliminar</button>
     </div>
   </div>
   </div>`
@@ -45,7 +46,7 @@ window.eliminarProducto = function (codigo){
     cancelButtonText: "Conservar",
   }).then((result) => {
     if (result.isConfirmed) {
-      let copiaListaCompras = listaCompras.filter((compra)=>{return compra.codigo != codigo});
+      let copiaListaCompras = listaCompras.filter((compra)=>{return compra.codigoBarra != codigo});
       listaCompras = copiaListaCompras;
       guardarDatosLS();
       actualizarTabla();

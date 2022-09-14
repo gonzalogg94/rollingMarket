@@ -1,3 +1,4 @@
+import Producto from "./classProducto.js";
 import { validarEmail, validarPassword } from "./helpers.js";
 let listaProductos=JSON.parse(localStorage.getItem('listaProductosKey'))||[];
 const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
@@ -16,16 +17,19 @@ window.detalleProducto = function(codigo){
   window.location.href = window.location.origin+`/pages/detalles.html?codigo=`+codigo;
 };
 let listaCompras = JSON.parse(localStorage.getItem('listaComprasKey')) || [];
+
 window.agregarAlCarrito = function (codigo){
   const parametroCodigo = codigo;
   let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
   let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo === parametroCodigo});
+  productoBuscado['codigoBarra'] = uuidv4();
   listaCompras.push(productoBuscado);
   numeroDeProductos = listaCompras.length;
   numerito();
   localStorage.setItem("listaComprasKey", JSON.stringify(listaCompras));
 }
 let numeroDeProductos = listaCompras.length;
+
 
 // agregamos los eventos.
 listaProductos.map((producto)=>{crearCardProducto(producto)});
