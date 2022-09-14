@@ -6,7 +6,6 @@ const parametroCodigo = new URLSearchParams(window.location.search);
 let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
 let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo === parametroCodigo.get('codigo')});
 
-console.log(productoBuscado.categoria)
 
 function tipoDeCategoria(){
   if(productoBuscado.categoria === "categoria1"){

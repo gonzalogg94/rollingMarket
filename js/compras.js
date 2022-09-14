@@ -1,5 +1,101 @@
 import { validarPassword, validarEmail } from "./helpers.js";
 
+
+//Maquetado del detalle
+let listaCompras = JSON.parse(localStorage.getItem('listaComprasKey')) || [];
+listaCompras.map((producto)=>{crearTablaCompras(producto)});
+
+//cargaInicial();
+function crearTablaCompras(producto){
+  let tablaCompra = document.querySelector("#detalleDeComprar");
+  tablaCompra.innerHTML += `<div class="card-header text-center my-4">
+  <h2>${producto.nombre}</h2>
+  </div>
+  <div class="card-body text-start ">
+  <div class="row">
+    <div class="col-4 card">
+      <img class="w-100" src="${producto.imagen}" alt="${producto.nombre}">
+  </div>
+    <div class="col-8 text-center">
+      <h5>${producto.descripcion}</h5>
+      <h4>Precio</h4>
+      <h5>$${producto.precio}</h5>
+      <hr>
+      <p>${producto.codigo}</p>
+      <button class="btn btn-danger" onclick="eliminarProducto('${producto.codigo}')">Eliminar</button>
+    </div>
+  </div>
+  </div>`
+  let sumatoria = document.querySelector("#sumatoria");
+  sumatoria.innerHTML = `<button class="btn btn-success my-4" onclick="sumatoria()">
+  <a  class="text-white text-decoration-none fs-3">Pagar</a>
+</button>`
+};
+
+//Eliminar Compra
+window.eliminarProducto = function (codigo){
+  Swal.fire({
+    title: "Quitar Producto",
+    text: "Estas por eliminar los productos con el mismo nombre en el carrito",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#51BA49",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Quitar",
+    cancelButtonText: "Conservar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let copiaListaCompras = listaCompras.filter((compra)=>{return compra.codigo != codigo});
+      listaCompras = copiaListaCompras;
+      guardarDatosLS();
+      actualizarTabla();
+      Swal.fire(
+        "Listo!",
+        "El carrito se actualizó",
+        "success"
+      );
+    }
+  });
+}
+function guardarDatosLS() {
+  localStorage.setItem("listaComprasKey", JSON.stringify(listaCompras));
+};
+function actualizarTabla() {
+  let tablaProductos = document.getElementById("detalleDeComprar");
+  tablaProductos.innerHTML = "";
+  cargaInicial();
+};
+function cargaInicial() {
+  if (listaCompras.length > 0) {
+    listaCompras.map((producto)=>{crearTablaCompras(producto)});
+  }
+};
+
+//Sumatoria
+window.sumatoria = function(){
+  let suma = 0;
+  listaCompras.forEach((producto)=>{sumarPrecios(producto)});
+  function sumarPrecios(producto){
+    suma += parseInt(producto.precio)
+ };
+ Swal.fire({
+  title: `$${suma}`,
+  text: "Este es tú monto para abonar",
+  icon: 'success',
+  showCancelButton: true,
+  confirmButtonColor: '#51BA49',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Pagar',
+  cancelButtonText: 'Seguir Comprando'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      '<a href="/pages/error404.html">Link de Pago</a>'
+    )
+  }
+})
+};
+
 // Declaracion de variables.
 const modalLoginCompras = new bootstrap.Modal(
   document.getElementById("modalLoginCompras")
