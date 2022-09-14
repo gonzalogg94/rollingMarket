@@ -13,10 +13,10 @@ function crearTablaCompras(producto){
   </div>
   <div class="card-body text-start ">
   <div class="row">
-    <div class="col-4 card">
+    <div class="col-lg-4 col-md-4 col-12 card">
       <img class="w-100" src="${producto.imagen}" alt="${producto.nombre}">
   </div>
-    <div class="col-8 text-center">
+    <div class="col-lg-8 col-md-8 col-12 text-center">
       <h5 class="mb-5">${producto.descripcion}</h5>
       <h3>Precio</h3>
       <h5>$${producto.precio}</h5>
