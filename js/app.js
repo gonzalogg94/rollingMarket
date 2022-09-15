@@ -74,7 +74,7 @@ function crearFila(Producto) {
       <i class="bi bi-pencil-square"></i>
     </button>
     <button class="btn btn-danger" onclick="borrarProducto('${Producto.codigo}')">
-      <i class="bi bi-x-square"></i>
+    <i class="bi bi-trash"></i>
     </button>
   </td>
 </tr>`;
