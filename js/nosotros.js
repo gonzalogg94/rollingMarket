@@ -1,6 +1,5 @@
 import { validarPassword, validarEmail } from "./helpers.js";
 
-// Declaracion de variables.
 const modalLoginNosotros = new bootstrap.Modal(
   document.getElementById("modalLoginNosotros")
 );
@@ -13,7 +12,6 @@ let passwordNosotros = document.getElementById("passwordNosotros");
 let opcionAdministrador = document.getElementById("opcionAdministrador");
 let opcionLogin = document.getElementById("opcionLogin");
 
-// declaracion de eventos.
 formLoginNosotros.addEventListener("submit", validarAdm);
 usuarioNosotros.addEventListener("blur", () => {
   validarEmail(usuarioNosotros);
@@ -22,7 +20,6 @@ passwordNosotros.addEventListener("blur", () => {
   validarEmail(passwordNosotros);
 });
 
-// Validar usuario al iniciar la pagina
 if (estadoSesion == true) {
   opcionLogin.className = "nav-item d-none";
   opcionAdministrador.className = "nav-item";
@@ -30,7 +27,6 @@ if (estadoSesion == true) {
   validarAdm();
 }
 
-// funciones
 function validarAdm(e) {
   e.preventDefault();
   if (mail === usuarioNosotros.value && pass === passwordNosotros.value) {

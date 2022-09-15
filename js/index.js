@@ -1,6 +1,7 @@
 import Producto from "./classProducto.js";
 import { validarEmail, validarPassword } from "./helpers.js";
-let listaProductos=JSON.parse(localStorage.getItem('listaProductosKey'))||[];
+let listaProductos =
+  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
 const mail = "rollingmarket@gmail.com";
 const pass = "rollingMarket2022*";
@@ -11,28 +12,30 @@ let password = document.getElementById("inputPassword");
 let loginIndex = document.getElementById("loginIndex");
 let administradorIndex = document.getElementById("administrador");
 
-//ruta de forma dinámica
-
-window.detalleProducto = function(codigo){  
-  window.location.href = window.location.origin+`/pages/detalles.html?codigo=`+codigo;
+window.detalleProducto = function (codigo) {
+  window.location.href =
+    window.location.origin + `/pages/detalles.html?codigo=` + codigo;
 };
-let listaCompras = JSON.parse(localStorage.getItem('listaComprasKey')) || [];
+let listaCompras = JSON.parse(localStorage.getItem("listaComprasKey")) || [];
 
-window.agregarAlCarrito = function (codigo){
+window.agregarAlCarrito = function (codigo) {
   const parametroCodigo = codigo;
-  let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
-  let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo === parametroCodigo});
-  productoBuscado['codigoBarra'] = uuidv4();
+  let listaProductos =
+    JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+  let productoBuscado = listaProductos.find((itemProducto) => {
+    return itemProducto.codigo === parametroCodigo;
+  });
+  productoBuscado["codigoBarra"] = uuidv4();
   listaCompras.push(productoBuscado);
   numeroDeProductos = listaCompras.length;
   numerito();
   localStorage.setItem("listaComprasKey", JSON.stringify(listaCompras));
-}
+};
 let numeroDeProductos = listaCompras.length;
 
-
-// agregamos los eventos.
-listaProductos.map((producto)=>{crearCardProducto(producto)});
+listaProductos.map((producto) => {
+  crearCardProducto(producto);
+});
 formulario.addEventListener("submit", validarAdm);
 usuario.addEventListener("blur", () => {
   validarEmail(usuario);
@@ -41,8 +44,6 @@ password.addEventListener("blur", () => {
   validarPassword(password);
 });
 
-// validar usurio con sesion storage
-
 if (estadoSesion == true) {
   loginIndex.className = "nav-item d-none";
   administradorIndex.className = "nav-item";
@@ -50,7 +51,6 @@ if (estadoSesion == true) {
   validarAdm();
 }
 
-// funciones
 function validarAdm(e) {
   e.preventDefault();
   if (mail === usuario.value && pass === password.value) {
@@ -75,11 +75,10 @@ function limpiarLogin() {
   password.className = "form-control";
 }
 
-
-function crearCardProducto(producto){
-if(producto.categoria==="categoria1"){
-  let productos = document.getElementById("limpieza")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
+function crearCardProducto(producto) {
+  if (producto.categoria === "categoria1") {
+    let productos = document.getElementById("limpieza");
+    productos.innerHTML += `<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -104,10 +103,10 @@ if(producto.categoria==="categoria1"){
       </div>
     </div>
   </div>
-</aside>`
-}else if(producto.categoria==="categoria2"){
-  let productos = document.getElementById("bebidas")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
+</aside>`;
+  } else if (producto.categoria === "categoria2") {
+    let productos = document.getElementById("bebidas");
+    productos.innerHTML += `<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -132,10 +131,10 @@ if(producto.categoria==="categoria1"){
       </div>
     </div>
   </div>
-</aside>`
-}else if(producto.categoria==="categoria3"){
-  let productos = document.getElementById("lacteos")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
+</aside>`;
+  } else if (producto.categoria === "categoria3") {
+    let productos = document.getElementById("lacteos");
+    productos.innerHTML += `<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -160,10 +159,10 @@ if(producto.categoria==="categoria1"){
       </div>
     </div>
   </div>
-</aside>`
-}else{
-  let productos = document.getElementById("electronica")
-  productos.innerHTML+=`<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
+</aside>`;
+  } else {
+    let productos = document.getElementById("electronica");
+    productos.innerHTML += `<aside class="col-lg-3 col-md-6 col-sm-12 mt-2">
   <div class="card text-center">
     <img
     src="${producto.imagen}"
@@ -188,24 +187,16 @@ if(producto.categoria==="categoria1"){
       </div>
     </div>
   </div>
-</aside>`
-};
-numerito();
+</aside>`;
+  }
+  numerito();
 }
 
-function numerito(){
-let numero = document.getElementById("carritoCompras")
-    numero.innerHTML=`<a href="../pages/listaCompras.html"><i class="bi bi-cart4 text-dark fs-5"></i></a>
+function numerito() {
+  let numero = document.getElementById("carritoCompras");
+  numero.innerHTML = `<a href="../pages/listaCompras.html"><i class="bi bi-cart4 text-dark fs-5"></i></a>
     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
       ${numeroDeProductos}
       <span class="visually-hidden">unread messages</span>
-    </span>`
-};
-
-
-
-
-
-
-
-
+    </span>`;
+}

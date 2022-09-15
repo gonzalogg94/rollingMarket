@@ -1,28 +1,29 @@
 import { validarPassword, validarEmail } from "./helpers.js";
 
-//Maquetado del detalle
 const parametroCodigo = new URLSearchParams(window.location.search);
 
-let listaProductos = JSON.parse(localStorage.getItem('listaProductosKey')) || [];
-let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo === parametroCodigo.get('codigo')});
+let listaProductos =
+  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+let productoBuscado = listaProductos.find((itemProducto) => {
+  return itemProducto.codigo === parametroCodigo.get("codigo");
+});
 
-
-function tipoDeCategoria(){
-  if(productoBuscado.categoria === "categoria1"){
-   tipoCategoria = "Limpieza";
-  }else if(productoBuscado.categoria === "categoria2"){
+function tipoDeCategoria() {
+  if (productoBuscado.categoria === "categoria1") {
+    tipoCategoria = "Limpieza";
+  } else if (productoBuscado.categoria === "categoria2") {
     tipoCategoria = "Bebidas";
-  }else if(productoBuscado.categoria === "categoria3"){
+  } else if (productoBuscado.categoria === "categoria3") {
     tipoCategoria = "Lácteos";
-  }else{
+  } else {
     tipoCategoria = "Electrónica";
-  };
-  };
-  let tipoCategoria;
-  tipoDeCategoria()
-  console.log(tipoCategoria)
+  }
+}
+let tipoCategoria;
+tipoDeCategoria();
+console.log(tipoCategoria);
 
-let detalle = document.querySelector('#cardDetalles');
+let detalle = document.querySelector("#cardDetalles");
 detalle.innerHTML = `<div class="card-body">
 <div class="text-center">
   <h1 class="text-center mb-3">${productoBuscado.nombre}</h1>
@@ -67,10 +68,8 @@ detalle.innerHTML = `<div class="card-body">
     </div>
   </div>
 </div>
-  </div>`
+  </div>`;
 
-
-// Declaracion de variables.
 const modalLoginDetalles = new bootstrap.Modal(
   document.getElementById("modalLoginDetalles")
 );
@@ -83,7 +82,6 @@ let passwordDetalles = document.getElementById("passwordDetalles");
 let ventanaLogin = document.getElementById("ventanaLogin");
 let ventanaAdministrador = document.getElementById("ventanaAdministrador");
 
-//   declaracion de eventos
 formLoginDetalles.addEventListener("submit", validarAdm);
 usuarioDetalles.addEventListener("blur", () => {
   validarEmail(usuarioDetalles);
@@ -91,7 +89,7 @@ usuarioDetalles.addEventListener("blur", () => {
 passwordDetalles.addEventListener("blur", () => {
   validarPassword(passwordDetalles);
 });
-// Validar usuario al iniciar la pagina
+
 if (estadoSesion == true) {
   ventanaLogin.className = "nav-item d-none";
   ventanaAdministrador.className = "nav-item";
@@ -99,7 +97,6 @@ if (estadoSesion == true) {
   validarAdm();
 }
 
-// funciones
 function validarAdm(e) {
   e.preventDefault();
   if (mail === usuarioDetalles.value && pass === passwordDetalles.value) {
@@ -122,4 +119,3 @@ function limpiarLogin() {
   usuarioDetalles.className = "form-control";
   passwordDetalles.className = "form-control";
 }
-
