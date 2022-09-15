@@ -9,8 +9,6 @@ import {
 } from "./helpers.js";
 import producto from "./classProducto.js";
 
-// declaracion de variables
-
 let codigo = document.getElementById("codigo");
 let nombre = document.getElementById("nombre");
 let descripcion = document.getElementById("descripcion");
@@ -27,7 +25,6 @@ const modalFormProductos = new bootstrap.Modal(
 );
 const btnCrearProducto = document.getElementById("btnCrearProducto");
 
-// eventos formulario producto
 codigo.addEventListener("blur", () => {
   validarCodigo(codigo);
 });
@@ -54,10 +51,8 @@ formularioProductos.addEventListener("submit", crearProducto);
 
 cargaInicial();
 
-// funciones
 function cargaInicial() {
   if (listaProductos.length > 0) {
-    // dibujar filas en la tabla
     listaProductos.map((Producto) => {
       crearFila(Producto);
     });
@@ -94,7 +89,7 @@ function mostrarFormulario() {
 
 function crearProducto(e) {
   e.preventDefault();
-  // agregar las validaciones
+
   if (
     validarNombre(nombre) &&
     validarDescripcion(descripcion) &&
@@ -151,7 +146,7 @@ function limpiarFormulario() {
 }
 function guardarDatosLS() {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
-};
+}
 
 window.borrarProducto = function (codigo) {
   Swal.fire({
@@ -165,14 +160,13 @@ window.borrarProducto = function (codigo) {
     cancelButtonText: "Cancelar",
   }).then((result) => {
     if (result.isConfirmed) {
-      // buscar en lista peliculas el codigo que quiero borrar
       let copiaListaProductos = listaProductos.filter(
         (Producto) => Producto.codigo != codigo
       );
       listaProductos = copiaListaProductos;
-      // actualizar el local storage
+
       guardarDatosLS();
-      // actualizar la tabla
+
       actualizarTabla();
       Swal.fire(
         "Eliminado",
@@ -186,7 +180,7 @@ function actualizarTabla() {
   let tablaProductos = document.getElementById("tablaProductos");
   tablaProductos.innerHTML = "";
   cargaInicial();
-};
+}
 
 window.editarProducto = function (codigoBuscado) {
   productoNuevo = false;
@@ -204,22 +198,19 @@ window.editarProducto = function (codigoBuscado) {
 };
 
 function actualizarProducto() {
-  // buscar laposicion de pelicula queestoy editando en el arreglo
   let posicionProducto = listaProductos.findIndex(
     (Producto) => Producto.codigo === codigo.value
   );
 
-  // actualizar todo los datos el objeto
-  listaProductos[posicionProducto].nombre= nombre.value;
-  listaProductos[posicionProducto].descripcion= descripcion.value;
-  listaProductos[posicionProducto].imagen= imagen.value;
-  listaProductos[posicionProducto].categoria= categoria.value;
-  listaProductos[posicionProducto].precio= precio.value;
-  listaProductos[posicionProducto].cantidad= cantidad.value;
-  // actualizar el local storage
+  listaProductos[posicionProducto].nombre = nombre.value;
+  listaProductos[posicionProducto].descripcion = descripcion.value;
+  listaProductos[posicionProducto].imagen = imagen.value;
+  listaProductos[posicionProducto].categoria = categoria.value;
+  listaProductos[posicionProducto].precio = precio.value;
+  listaProductos[posicionProducto].cantidad = cantidad.value;
+
   guardarDatosLS();
 
-  // actualizar la tabla
   actualizarTabla();
   modalFormProductos.hide();
   limpiarFormulario();

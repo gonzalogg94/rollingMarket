@@ -1,6 +1,5 @@
 import { validarPassword, validarEmail } from "./helpers.js";
 
-// Declaracion de variables.
 const modalLoginError = new bootstrap.Modal(
   document.getElementById("modalLoginError")
 );
@@ -13,7 +12,6 @@ let passwordError = document.getElementById("passwordError");
 let ventanaLogin = document.getElementById("ventanaLogin");
 let ventanaAdministrador = document.getElementById("ventanaAdministrador");
 
-// declaracion de eventos.
 formLoginError.addEventListener("submit", validarAdm);
 usuarioError.addEventListener("blur", () => {
   validarEmail(usuarioError);
@@ -22,7 +20,6 @@ passwordError.addEventListener("blur", () => {
   validarPassword(passwordError);
 });
 
-// Validar usuario al iniciar la pagina
 if (estadoSesion == true) {
   ventanaLogin.className = "nav-item d-none";
   ventanaAdministrador.className = "nav-item";
@@ -30,7 +27,6 @@ if (estadoSesion == true) {
   validarAdm();
 }
 
-// funciones
 function validarAdm(e) {
   e.preventDefault();
   if (mail === usuarioError.value && pass === passwordError.value) {
