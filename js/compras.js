@@ -35,7 +35,7 @@ function crearTablaCompras(producto) {
 window.eliminarProducto = function (codigo) {
   Swal.fire({
     title: "Quitar Producto",
-    text: "Estas por eliminar los productos con el mismo nombre en el carrito",
+    text: "Borrará el producto del carrito, ¿quiere continuar?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#51BA49",
